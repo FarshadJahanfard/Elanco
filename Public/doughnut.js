@@ -28,6 +28,15 @@ let myChart2 = new Chart(ctx3, {
         }]
     },
     options: {
+        layout: {
+            padding: {
+                left: 20,
+                right: 20,
+                top: 20,
+                bottom: 20
+            }
+        },
+        cutout: '75%', // Adjust this value to make the doughnut thinner or thicker, if needed
         plugins: {
             legend: {
                 display: false, // Disable the legend
