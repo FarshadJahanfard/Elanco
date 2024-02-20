@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
+    overflow-x:hidden; 
+}
+
+/* buttom menu */
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0067B1;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    transition: transform 0.3s ease; 
+}
+
+.bottom-menu.hidden {
+    transform: translateY(100%); 
+}
+
+.bottom-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.bottom-menu a:hover {
+    background-color: #005080; 
+    transform: scale(1.1); 
+}
+
+.bottom-menu.hidden {
+    transform: translateY(100%);
+}
+
+.bottom-menu a.active {
+    background-color: #005080; 
+    transform: scale(1.1);
+}
+
+.bottom-menu a:hover {
+    background-color: #005080;
+    transform: scale(1.1);
+}
+
+.bottom-menu.hidden {
+    transform: translateY(100%);
+}
+
+.bottom-menu a i {
+    margin-bottom: 5px;
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: #0067B1;
+    color: #fff;
+    padding: 15px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Burger menu styles */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 45px;
+    transition: transform 0.3s ease;
+}
+
+/* Navigation links styles */
+nav ul {
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #0067B1;
+    width: 100%;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+    margin: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Change text color on hover */
+nav a:hover {
+    color: #2B3A67; 
+}
+
+/* Logo styles */
+.logo {
+    max-width:150px;
+    cursor: pointer; 
+} 
+/* hiding desktop div 1 links on mobile */
+.div1{
+    display: none;
+}
+/* hiding the desktop widgets titles and sub titles */
+
+.parent h1, h3 {
+    display: none;
+}
+
+
+/* Box Styles */
+.box {
+    background: linear-gradient(to bottom, #FFFFFF, #E3E3E3); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    min-width: 100px; /* Minimum width for boxes */
+    min-height:100px; /* Minimum height for boxes */
+    transition: transform 0.3s ease;
+}
+
+.box i {
+    margin-right: 5px; /* Add some space between the icon and the text */
+    font-size: 20px; /* Adjust the size of the icons */
+}
+.box:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* Styles for the dashboard container */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(3, 1fr); /* Three rows */
+    gap: 30px; /* Spacing between boxes */
+    justify-content: center; /* Center grid horizontally */
+    align-content: center; /* Center grid vertically */
+    padding: 20px;
+    margin: 0 auto; /* Center the container itself */
+    width: auto; /* Maximum width of the container, adjust as needed */
+    height: 75vh; /* Optional: if you want the container to fill the screen height */
+}
+
+/* Media query to show/hide burger menu based on screen size */
+@media (max-width: 767px) {
+    .burger-menu {
+        display: block;
+    }
+
+    nav ul.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Dashboard title  */
+.index-dash{
+    color: #fff;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
