@@ -10,6 +10,7 @@ const activityLevelroutes = require('./routes/activityLevelroutes.js');
 const heartRate = require('./routes/heartRate.js');
 const foodIntake = require('./routes/foodIntake.js');
 const temperature = require('./routes/temperature.js');
+const weight = require('./routes/weight.js');
 
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -36,6 +37,7 @@ async function main() {
         app.use('/api/heartRate', heartRate);
         app.use('/api/foodIntake', foodIntake);
         app.use('/api/temperature', temperature);
+        app.use('/api/weight', weight);
         // Start the server
         app.listen(process.env.PORT, () => {
             console.log(`Server is running on port ${process.env.PORT}`);
