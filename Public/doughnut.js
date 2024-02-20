@@ -19,12 +19,13 @@ const ctx3 = temperatureCanvas.getContext('2d');
 let myChart2 = new Chart(ctx3, {
     type: "doughnut",
     data: {
-        labels: [], // Labels for each doughnut segment
+        labels: [ ], // Labels for each doughnut segment
         datasets: [{
             data: [], // Data values for each segment
-            backgroundColor: ["red"], // Set segment colors. Ensure there's a color for each segment.
-            borderColor: "#FF6384",
+          backgroundColor: 'rgba(88, 100, 241, 0.5)',
+            borderColor: "#ffffff",
             borderWidth: 1,
+            hoverOffset: 4,
         }]
     },
     options: {
