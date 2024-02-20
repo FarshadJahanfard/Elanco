@@ -15,7 +15,7 @@ router.get('/dog/:dogId', async (req, res) => {
             {
                 DogID: dogId,
                 "Activity Level (steps)": { $gte: 0, $lte: 9999 },
-                "Date": {"$in": ["01-01-2021", "01-02-2021"]},
+                "Date": "31-12-2023",
             },
             { projection }
         ).toArray();
