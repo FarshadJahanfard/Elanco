@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Elanco Project | Home</title>
     <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 767px)">
     <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 768px)">
@@ -49,8 +48,8 @@
             <h3>Normal</h3>
         </div>
         <div class="div6" style="position: relative;">
-            <canvas id="temperatureCanvas"></canvas>
-            <div id="chartCenterText" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px;">
+            <canvas id="temperatureCanvas" style="width: 200px; height: 100px; position: relative;"></canvas>
+            <div id="chartCenterText" style="position: absolute; top: 50%; left:50%; transform: translate(-50%, -50%); color: white; font-size: 20px;">
                 Loading...
             </div>
             
@@ -59,7 +58,6 @@
             <h1>Heart Rate (bpm)
                 <canvas id="heartRateCanvas"></canvas>
             </h1>
-            <h3>127</h3>
         </div>
         <div class="div8">
 
@@ -97,6 +95,8 @@
     <script src="./lineChart.js"></script>
      <script src="./barChart.js"></script>
     <script src="./doughnut.js"></script>
+
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Call the function with the specific dog ID

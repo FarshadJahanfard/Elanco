@@ -22,9 +22,11 @@ let myChart1 = new Chart(ctx2, {
         datasets: [{
             label: "Steps",
             data: [], // Initially empty
-            backgroundColor: "blue", // Set bar color to red
+            backgroundColor: "#00FF00", // Set bar color to green
             borderColor: "blue",
+            borderColor: "rgba(255, 99, 132, 0.2)",
             fill: false,
+            thickness: 5,
         }]
     },
     options: {
