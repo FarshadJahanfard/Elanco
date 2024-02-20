@@ -48,8 +48,12 @@
             <h1>Behaviour Pattern</h1>
             <h3>Normal</h3>
         </div>
-        <div class="div6">
+        <div class="div6" style="position: relative;">
             <canvas id="temperatureCanvas"></canvas>
+            <div id="chartCenterText" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px;">
+                Loading...
+            </div>
+            
         </div>
         <div class="div7">
             <h1>Heart Rate (bpm)
@@ -93,5 +97,36 @@
     <script src="./lineChart.js"></script>
      <script src="./barChart.js"></script>
     <script src="./doughnut.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Call the function with the specific dog ID
+            fetchDogData('CANINE001'); // Replace 'CANINE001' with the actual dog ID you're interested in
+        });
+    </script>
+    
+    <script>
+        function fetchDogData(dogId) {
+            const url = `http://localhost:3001/api/temperature/dog/${dogId}`;
+            return fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Since your data is an array of objects, access the first item and then its 'Temperature (C)' property
+                    const temperature = data[0]["Temperature (C)"]; // Adjust based on actual data structure
+            
+                    // Update the text in the middle of the chart
+                    document.getElementById('chartCenterText').textContent = `${temperature}°C`;
+                })
+                .catch(error => {
+                    console.error('11111 tching temperature data:', error);
+                    document.getElementById('chartCenterText').textContent = 'Error';
+                });
+        }
+    </script>
+
 </body>
 </html>

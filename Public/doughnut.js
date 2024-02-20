@@ -19,40 +19,18 @@ const ctx3 = temperatureCanvas.getContext('2d');
 let myChart2 = new Chart(ctx3, {
     type: "doughnut",
     data: {
-        labels: [], // Initially empty
+        labels: [], // Labels for each doughnut segment
         datasets: [{
-            label: "Temperature (C)",
-            data: [], // Initially empty
-            backgroundColor: "red", // Set bar color to blue
+            data: [], // Data values for each segment
+            backgroundColor: ["red"], // Set segment colors. Ensure there's a color for each segment.
             borderColor: "#FF6384",
-            fill: false,
+            borderWidth: 1,
         }]
     },
     options: {
-        scales: {
-            y: {
-                beginAtZero: false, // Adjust if necessary to fit your data
-                ticks: {
-                    color: "white" // Set Y-axis ticks text color to white
-                }
-            },
-            x: {
-                ticks: {
-                    color: "white" // Set X-axis ticks text color to white
-                }
-            }
-        },
-        legend: {
-            display: true, // Set to true to display the legend
-            labels: {
-                color: "white" // Set legend text color to white
-            }
-        },
         plugins: {
             legend: {
-                labels: {
-                    color: "white" // Ensure legend text color is white for newer versions of Chart.js
-                }
+                display: false, // Disable the legend
             }
         }
     }
@@ -63,12 +41,13 @@ function updateChartData(dogId) {
     fetchDogData(dogId).then(data => {
         // Generate labels for each data point, making them more descriptive
  
+        const labels = data.map((_, index) => `${index + 1}`);
         // Extract heart rates using the "Heart Rate (bpm)" property from the data
         const temperature = data.map(item => item["Temperature (C)"]);
 
 
         // Update the chart with the new data
-
+        myChart2.data.labels = labels;
         myChart2.data.datasets[0].data = temperature;
 
         // Refresh the chart to display the new data
