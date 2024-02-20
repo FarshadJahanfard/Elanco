@@ -41,7 +41,7 @@ let myChart2 = new Chart(ctx3, {
         plugins: {
             title: {
                 display: true,
-                text: 'Temperature',
+                text: 'Current Temperature',
                 color: "white",
                 
             },

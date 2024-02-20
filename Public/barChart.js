@@ -16,7 +16,7 @@ const ctx2 = stepsCanvas.getContext('2d');
 
 // Create a new Chart instance
 let myChart1 = new Chart(ctx2, {
-    type: "bar",
+    type: "scatter",
     data: {
         labels: [], // Initially empty
         datasets: [{
@@ -41,7 +41,8 @@ let myChart1 = new Chart(ctx2, {
                     text: 'Steps',
                     font: {
                         size: 16},
-                    color: "white"
+                    color: "white",
+                    align: "center"
                 },
             },
             x: {

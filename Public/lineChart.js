@@ -20,7 +20,7 @@ let myChart = new Chart(ctx, {
     data: {
         labels: [{ }], // Initially empty
         datasets: [{
-            label: "Heart Rate (bpm)",
+            label: "Heart Rate",
             data: [], // Initially empty
             backgroundColor: "red", 
             borderColor: "#FF6384",
@@ -33,14 +33,26 @@ let myChart = new Chart(ctx, {
                 beginAtZero: false, // Adjust if necessary to fit your data
                 ticks: {
                     color: "white" // Set Y-axis ticks text color to white
+                },
+                title: {
+                    display: true,
+                    text: 'Heart Rate (bpm)',
+                    color: "white",
+                    align:"center"
                 }
             },
             x: {
                 ticks: {
                     color: "white" // Set X-axis ticks text color to white
+                },
+                title: {
+                    display: true,
+                    text: 'Time Of Day',
+                    color: "white",
+                    align: "center"
                 }
             }
-        },
+        }, // Add a closing parenthesis here
         legend: {
             display: true, // Set to true to display the legend
             labels: {
