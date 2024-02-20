@@ -19,7 +19,7 @@ const ctx3 = temperatureCanvas.getContext('2d');
 let myChart2 = new Chart(ctx3, {
     type: "doughnut",
     data: {
-        labels: [ ], // Labels for each doughnut segment
+        labels: [], // Labels for each doughnut segment
         datasets: [{
             data: [], // Data values for each segment
           backgroundColor: 'rgba(88, 100, 241, 0.5)',
@@ -39,6 +39,12 @@ let myChart2 = new Chart(ctx3, {
         },
         cutout: '75%', // Adjust this value to make the doughnut thinner or thicker, if needed
         plugins: {
+            title: {
+                display: true,
+                text: 'Temperature',
+                color: "white",
+                
+            },
             legend: {
                 display: false, // Disable the legend
             }

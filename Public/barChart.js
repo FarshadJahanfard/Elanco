@@ -35,13 +35,23 @@ let myChart1 = new Chart(ctx2, {
                 beginAtZero: false, // Adjust if necessary to fit your data
                 ticks: {
                     color: "white" // Set Y-axis ticks text color to white
-                }
+                },
+                title: {
+                    display: true,
+                    text: 'Steps',
+                    font: {
+                        size: 16},
+                    color: "white"
+                },
             },
             x: {
                 title: {
                     display: true,
-                    text: 'Time',
-                    color: "white"
+                    text: 'Time Of Day',
+                    font: {
+                        size: 16},
+                    color: "white",
+                    align: "center"
                 },
                 ticks: {
                     color: "white" // Set X-axis ticks text color to white

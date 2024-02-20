@@ -4,6 +4,7 @@ body {
   padding: 0;
   height: 200vh;
   background-color: #d4d5d9;
+  overflow-x: hidden;
  
 }
 .bottom-menu{
@@ -27,8 +28,6 @@ header {
   border-radius: 5px;
   cursor:pointer;
 }
-
-
 
 nav ul {
   list-style: none;
@@ -120,7 +119,38 @@ nav ul li a i {
   .div1 a i {
     margin-right: 8px; 
   }
- 
+
+  /* sidebar social links */
+  .socials {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #c7e7ff;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-around;    
+    margin: 10px;
+}
+
+.socials a {
+    margin: 0 10px; 
+    font-size: 28px; 
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: #333;
+    
+}
+
+.socials a:hover {
+    color: #fff; 
+    transition: color 0.3s ease;
+
+}
+
+
  /* big blue widget */
   .div2 { grid-area: 1 / 2 / 3 / 4; 
     background:rgba(43, 58, 103, 1);
