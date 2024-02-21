@@ -16,17 +16,14 @@ const ctx2 = stepsCanvas.getContext('2d');
 
 // Create a new Chart instance
 let myChart1 = new Chart(ctx2, {
-    type: "scatter",
+    type: "bubble",
     data: {
-        labels: [], // Initially empty
-        datasets: [{
+            datasets: [{
             label: "Steps",
-            data: [], // Initially empty
-            backgroundColor: "#00FF00", // Set bar color to green
-            borderColor: "blue",
-            borderColor: "rgba(255, 99, 132, 0.2)",
-            fill: false,
-            thickness: 5,
+            backgroundColor: "#0067b1", // Set bar color to green
+            borderColor: "white",
+            borderWidth: 1,
+            hoverOffset: 4,
         }]
     },
     options: {
