@@ -34,13 +34,14 @@ body {
 .profileCard ul,
 h1,
 h2 {
+  padding-top: 30px;
   list-style: none;
   color: azure;
   padding-left: 0; /*for the li*/
 }
 
 .profileCard h2 {
-  margin-top: -20px;
+  margin-top: -50px;
 }
 
 .profileCard ul li {
@@ -48,16 +49,34 @@ h2 {
 }
 
 .profileCard img {
-  width: 100px;
-  height: auto;
-  border-radius: 50px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
 }
 
 .profileCard img:hover {
-  opacity: 0.5;
+  opacity: 0.1;
 }
 
+/*
 .editBttn {
   width: 80px;
   height: 30px;
+}*/
+
+label {
+  display: block;
+  padding: 12px;
+  margin: 10px auto;
+  border-radius: 5px;
+  cursor: pointer;
+  /*just to center inside the profile*/
+  color: aliceblue;
+  margin-top: -90px;
+  /*bring to front*/
+  position: relative; /*absolute would mess with placement, so this brought it to the front*/
+}
+
+input {
+  display: none;
 }

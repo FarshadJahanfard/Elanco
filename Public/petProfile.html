@@ -28,7 +28,19 @@
       </div>
       <div class="container-card">
         <div class="profileCard">
-          <img src="images/petProfile.jpg" alt="your pet profile" />
+          <img
+            src="images/petProfile.jpg"
+            alt="your pet profile"
+            id="profile-pic"
+          />
+          <label for="input-file">Edit</label>
+          <input
+            type="file"
+            accept="image/jpeg, image/png, image/jpg"
+            id="input-file"
+          />
+
+          <!--so far placeholder but can change profile picture-->
           <h1>Pet Profile</h1>
           <h2>CANINE001</h2>
           <ul>
@@ -41,9 +53,18 @@
             <li>Phone number: 12312312312</li>
             <li>Last visit: 19-12-2023</li>
           </ul>
-          <button class="editBttn">Edit</button>
+          <!--<button class="editBttn">Edit</button>-->
         </div>
       </div>
     </div>
+    <!--https://www.youtube.com/watch?v=xXrs4j-p3yE-->
+    <script>
+      let profilePic = document.getElementById("profile-pic");
+      let inputFile = document.getElementById("input-file");
+
+      inputFile.onchange = function () {
+        profilePic.src = URL.createObjectURL(inputFile.files[0]);
+      };
+    </script>
   </body>
 </html>
