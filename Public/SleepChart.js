@@ -20,6 +20,7 @@ var chart = JSC.chart(
       { value: [0, 30], color: '#FF5353' },
       { value: [30, 70], color: '#FFD221' },
       { value: [70, 100], color: '#77E6B4' }
+
     ]
   },
   yAxis: {
@@ -66,10 +67,10 @@ var chart = JSC.chart(
           fill: 'white',
           type: 'circle',
           size: 30
-        }
-      },
-      points: [{ y: 0}]
-    }
+        },
+      }, // Add a comma here
+      points: [{ y: 0 }],
+    },
   ],
 
   

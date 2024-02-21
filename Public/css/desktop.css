@@ -246,3 +246,11 @@ nav ul li a i {
     display: none;
   }
 
+/* login page */
+
+.login-div{
+  display: flex;
+  height: 100vh;
+  background-size: fill;
+  background-repeat: no-repeat;
+}
