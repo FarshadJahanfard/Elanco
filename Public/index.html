@@ -42,9 +42,14 @@
         <div class="div2">
             <h1>Activity Level (steps)
                 <canvas id="stepsCanvas"></canvas>
-                <div id="chartDiv" style="max-width: 400px; height: 250px;margin: 0px auto; padding-left: 10px; padding-right: 10px; "></div>
+                <div id="chartDiv" style="max-width: 400px; height: 250px;margin: 0px auto; padding-left: 10px; padding-right: 10px; "> </div>
+
+                <div id="chartCenterText4" style="position: relative; top: 25%; left: 30%; color: rgb(255, 69, 69); font-size: 28px; margin: auto;">
+                    Loading...
+                </div>
             </h1>
         </div>
+
 
         <div class="div3">
 
@@ -107,6 +112,7 @@
      <script src="./barChart.js"></script>
     <script src="./doughnut.js"></script>
     <script src="./SleepChart.js"></script>
+    <script src = "../backend/routes/activityLevelroutes.js"></script>
 
     
     <script>
@@ -114,6 +120,7 @@
             // Call the function with the specific dog ID
             fetchDogData('CANINE001'); 
             fetchDogData1('CANINE001');// Replace 'CANINE001' with the actual dog ID you're interested in
+            fetchDogData3('CANINE001');
         });
     </script>
     
@@ -160,6 +167,30 @@
                 .catch(error => {
                     console.error('Error weight data:', error);
                     document.getElementById('chartCenterText1').textContent = 'Error';
+                });
+        }
+    </script>
+    <script>
+        function fetchDogData3(dogId){
+            const url = `http://localhost:3001/api/activityLevel/dog/${dogId}`;
+            return fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const activityLevels = data.map(item => item["Activity Level (steps)"]);
+                    const totalActivityLevel = activityLevels.reduce((total, current) => total + current, 0); 
+                    console.log('Total Activity Level:', totalActivityLevel);
+            
+                    // Update the text in the middle of the chart
+                    document.getElementById('chartCenterText4').textContent = ` Total ${totalActivityLevel} (steps)`;
+                })
+                .catch(error => {
+                    console.error('Error fetching activity level data:', error);
+                    document.getElementById('chartCenterText4').textContent = 'Error';
                 });
         }
     </script>
