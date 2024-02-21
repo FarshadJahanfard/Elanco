@@ -17,11 +17,20 @@ router.get('/dog/:dogId', async (req, res) => {
             "Breathing Rate (breaths/min)": 1 
 
         };
-        const startDate = "01-11-2022";
-        const endDate = "31-12-2022";
+        
 
         const data = await collection.find(
             {
+                $or: [
+                    {
+                        "Date": "30-12-2023",
+                "Hour": { $gte: 12, $lte: 24},
+                    },
+                    {
+                        "Date": "31-12-2023",
+                "Hour": { $gte: 0, $lte: 12},
+                    }
+                ],
                 DogID: dogId,
                 "Behaviour Pattern": "Sleeping",
                 "Heart Rate (bpm)": { $gte: 0, $lte: 1000},
@@ -29,7 +38,7 @@ router.get('/dog/:dogId', async (req, res) => {
                 "Breathing Rate (breaths/min)": { $gte: 0, $lte: 1000},
 
                 //date is in american time format
-                "Date": {"$gte": startDate, "$lte":endDate},
+                
             },
            { projection}
         ).toArray();
