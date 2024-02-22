@@ -14,6 +14,8 @@ const weight = require('./routes/weight.js');
 const sleepingPattern = require('./routes/sleepingPattern.js');
 
 
+app.get('/', (req, res) => res.redirect('/login.html'))
+
 app.use(express.static(path.join(__dirname, '..', 'public')));
 const uri = 'mongodb+srv://c1022557:Elanco@eland-project.88nwkvg.mongodb.net/'; // MongoDB connection URI
 const client = new MongoClient(uri);

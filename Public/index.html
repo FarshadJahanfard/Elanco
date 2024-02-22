@@ -44,7 +44,13 @@
                 <canvas id="stepsCanvas"></canvas>
                 <div id="chartDiv" style="max-width: 400px; height: 250px;margin: 0px auto; padding-left: 10px; padding-right: 10px; "> </div>
 
-                <div id="chartCenterText4" style="position: relative; top: 25%; left: 30%; color: rgb(255, 69, 69); font-size: 28px; margin: auto;">
+                <div id="chartCenterText4" style="    position: absolute;
+                top: 16%;
+                left: 43%;
+                color: rgb(229, 225, 225);
+                font-size: 28px;
+                margin: auto;
+                font-size: 17px;">
                     Loading...
 
                 </div>
@@ -56,14 +62,14 @@
 
         </div>
         <div class="div4">
-            <h1>Weight (kg)</h1>
+            <h1 style="font-size: larger;">Weight (kg)</h1>
                 <div id="chartCenterText1" style="position: relative; top: 25%; left: 30%; color: white; font-size: 28px; margin: auto;">
                     Loading...
                 </div>
             
         </div>
         <div class="div5">
-            <h1>Behaviour Pattern</h1>
+            <h1 style="font-size:larger;">Behaviour Pattern</h1>
             <h3>Normal</h3>
         </div>
         <div class="div6" style="position: relative;">
@@ -113,88 +119,10 @@
      <script src="./barChart.js"></script>
     <script src="./doughnut.js"></script>
     <script src="./SleepChart.js"></script>
+    <script src="./onScreenDisplays.js"></script>
     <script src = "../backend/routes/activityLevelroutes.js"></script>
 
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Call the function with the specific dog ID
-            fetchDogData('CANINE001'); 
-            fetchDogData1('CANINE001');// Replace 'CANINE001' with the actual dog ID you're interested in
-            fetchDogData3('CANINE001');
-        });
-    </script>
-    
-    <script>
-        function fetchDogData(dogId) {
-            const url = `http://localhost:3001/api/temperature/dog/${dogId}`;
-            return fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Since your data is an array of objects, access the first item and then its 'Temperature (C)' property
-                    const temperature = data[0]["Temperature (C)"]; // Adjust based on actual data structure
-            
-                    // Update the text in the middle of the chart
-                    document.getElementById('chartCenterText').textContent = `${temperature}°C`;
-                })
-                .catch(error => {
-                    console.error('11111 tching temperature data:', error);
-                    document.getElementById('chartCenterText').textContent = 'Error';
-                });
-        }
-    </script>
-    <script>
-        function fetchDogData1(dogId) {
-            const url = `http://localhost:3001/api/weight/dog/${dogId}`;
-            return fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Since your data is an array of objects, access the first item and then its 'Temperature (C)' property
-                    const weight = data[0]["Weight (kg)"]; // Adjust based on actual data structure
-            
-                    // Update the text in the middle of the chart
-                    document.getElementById('chartCenterText1').textContent = `${weight} kg`;
-                })
-                .catch(error => {
-                    console.error('Error weight data:', error);
-                    document.getElementById('chartCenterText1').textContent = 'Error';
-                });
-        }
-    </script>
-    <script>
-        function fetchDogData3(dogId){
-            const url = `http://localhost:3001/api/activityLevel/dog/${dogId}`;
-            return fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    const activityLevels = data.map(item => item["Activity Level (steps)"]);
-                    const totalActivityLevel = activityLevels.reduce((total, current) => total + current, 0); 
-                    console.log('Total Activity Level:', totalActivityLevel);
-            
-                    // Update the text in the middle of the chart
-                    document.getElementById('chartCenterText4').textContent = ` Total ${totalActivityLevel} (steps)`;
-                })
-                .catch(error => {
-                    console.error('Error fetching activity level data:', error);
-                    document.getElementById('chartCenterText4').textContent = 'Error';
-                });
-        }
-    </script>
+
 
 </body>
 </html>
