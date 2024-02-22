@@ -40,6 +40,9 @@ let myChart = new Chart(ctx, {
                     text: 'Heart Rate (bpm)',
                     color: "white",
                     align:"center"
+                },
+                grid: {
+                    color: "white",// Turn off grid lines for y axis
                 }
             },
             x: {
@@ -51,6 +54,9 @@ let myChart = new Chart(ctx, {
                     text: 'Time Of Day',
                     color: "white",
                     align: "center"
+                },
+                grid: {
+                    color: "white", // Turn off grid lines for y axis
                 }
             }
         }, // Add a closing parenthesis here
