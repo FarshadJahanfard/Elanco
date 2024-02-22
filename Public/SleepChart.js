@@ -1,3 +1,32 @@
+async function fetchDogData2(dogId) {
+  const url = `http://localhost:3001/api/sleepingPattern/dog/${dogId}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    const idealHeartRateMidpoint = 90;
+    const idealBreathingRateMidpoint = 20;
+
+    function calculateDeviation(value, midpoint) {
+      return Math.abs(value - midpoint) / midpoint;
+    }
+
+    const heartRateScores = data.map(item => 1 - calculateDeviation(item["Heart Rate (bpm)"], idealHeartRateMidpoint));
+    const breathingRateScores = data.map(item => 1 - calculateDeviation(item["Breathing Rate (breaths/min)"], idealBreathingRateMidpoint));
+
+    const averageScores = heartRateScores.map((hr, index) => (hr + breathingRateScores[index]) / 2);
+    const overallSleepQualityScore = averageScores.reduce((acc, curr) => acc + curr, 0) / averageScores.length;
+
+    const sleepPerformanceIndex = overallSleepQualityScore * 100;
+    const roundedIndex = Math.round(sleepPerformanceIndex);
+    return roundedIndex;
+  } catch (error) {
+    console.error('Error fetching dog data:', error);
+  }
+}
+
 var INTERVAL_ID,
 animationDuration = 420,
 updateInterval = 800;
@@ -80,14 +109,18 @@ function() {
 }
 );
 
-function updateChart(chrt) {
-chrt = chart || chrt;
+async function updateChart(chrt) {
+  chrt = chart || chrt;
+  
+  try {
+    var value3 = await fetchDogData2('CANINE001');
+    var series = chrt.series(0);
 
-var series = chrt.series(0),
-  rValue = 60;
-
-series.options({ shape_label: [{}, { text: labelText(rValue) }] }, { animation: false });
-series.points(0).options({ y: rValue });
+    series.options({ shape_label: [{}, { text: labelText(value3) }] }, { animation: false });
+    series.points(0).options({ y: value3 });
+  } catch (error) {
+    console.error('Error updating chart:', error);
+  }
 }
 
 function playPause(val) {
