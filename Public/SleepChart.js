@@ -6,8 +6,8 @@ async function fetchDogData2(dogId) {
       throw new Error('Network response was not ok');
     }
     const data = await response.json();
-    const idealHeartRateMidpoint = 90;
-    const idealBreathingRateMidpoint = 20;
+    const idealHeartRateMidpoint = 90; // base point of the acceptable
+    const idealBreathingRateMidpoint = 20;  
 
     function calculateDeviation(value, midpoint) {
       return Math.abs(value - midpoint) / midpoint;
