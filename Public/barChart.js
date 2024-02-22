@@ -91,7 +91,7 @@ function updateChartData(dogId) {
         console.log('Total Activity Level:', totalActivityLevel);
 
         // Update the text in the middle of the chart
-        document.getElementById('chartCenterText4').textContent = ` Total ${totalActivityLevel} (steps)`;
+        document.getElementById('chartCenterText4').textContent = ` Total Steps:  ${totalActivityLevel}`;
 
         // Refresh the chart to display the new data
         myChart1.update();
