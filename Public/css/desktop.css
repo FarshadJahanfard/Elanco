@@ -152,9 +152,9 @@ nav ul li a i {
 
  /* big blue widget */
   .div2 { grid-area: 1 / 2 / 3 / 4; 
-    background:red;
     border-radius: 10px;
     margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
   }
   .div2 h1{
     color: #fff;
@@ -190,7 +190,8 @@ nav ul li a i {
     background:rgba(21, 139, 82, 1);
     border-radius: 10px;
     margin-top: 10px;
-    margin-right: 10px
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
   }
 
   .div5 h1{
@@ -208,9 +209,10 @@ nav ul li a i {
   }
 /* second row small blue widget right */
   .div6 { grid-area: 2 / 5 / 3 / 6; 
-    background: rgba(43, 58, 103, 1);
+    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
     border-radius: 10px;
-    margin-right: 10px
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
   }
 
   .div6 h1 {
@@ -222,8 +224,9 @@ nav ul li a i {
   }
 /* second row small blue left widget */
   .div7 { grid-area: 2 / 4 / 3 / 5; 
-    background: rgba(43, 58, 103, 1);
+    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
   }
 
   .div7 h1{
