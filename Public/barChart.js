@@ -86,6 +86,13 @@ function updateChartData(dogId) {
         myChart1.data.labels = labels;
         myChart1.data.datasets[0].data = steps;
 
+        const activityLevels = data.map(item => item["Activity Level (steps)"]);
+        const totalActivityLevel = activityLevels.reduce((total, current) => total + current, 0); 
+        console.log('Total Activity Level:', totalActivityLevel);
+
+        // Update the text in the middle of the chart
+        document.getElementById('chartCenterText4').textContent = ` Total ${totalActivityLevel} (steps)`;
+
         // Refresh the chart to display the new data
         myChart1.update();
     }).catch(error => {
