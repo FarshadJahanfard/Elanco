@@ -66,6 +66,8 @@ function updateChartData(dogId) {
         myChart2.data.labels = labels;
         myChart2.data.datasets[0].data = temperature;
 
+        document.getElementById('chartCenterText').textContent = `${temperature}°C`;
+
         // Refresh the chart to display the new data
         myChart2.update();
     }).catch(error => {

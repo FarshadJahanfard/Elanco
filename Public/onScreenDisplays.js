@@ -1,24 +1,3 @@
-function fetchDogData(dogId) {
-    const url = `http://localhost:3001/api/temperature/dog/${dogId}`;
-    return fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Since your data is an array of objects, access the first item and then its 'Temperature (C)' property
-            const temperature = data[0]["Temperature (C)"]; // Adjust based on actual data structure
-    
-            // Update the text in the middle of the chart
-            document.getElementById('chartCenterText').textContent = `${temperature}°C`;
-        })
-        .catch(error => {
-            console.error('11111 tching temperature data:', error);
-            document.getElementById('chartCenterText').textContent = 'Error';
-        });
-}
 function fetchDogData1(dogId) {
     const url = `http://localhost:3001/api/weight/dog/${dogId}`;
     return fetch(url)
