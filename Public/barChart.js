@@ -16,7 +16,7 @@ const ctx2 = stepsCanvas.getContext('2d');
 
 // Create a new Chart instance
 let myChart1 = new Chart(ctx2, {
-    type: "bubble",
+    type: "line",
     data: {
             datasets: [{
             label: "Steps",
