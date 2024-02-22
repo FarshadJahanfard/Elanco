@@ -5,6 +5,7 @@ body {
   box-sizing: border-box;
   background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .bottom-menu{
   display: none;
@@ -91,7 +92,7 @@ nav ul li a i {
 /* sidebar */
   .div1 { grid-area: 1 / 1 / 5 / 2; 
     background: #fff;
-    height: 100vh;
+    height: 74vh;
     width: 260px;
     justify-content: center; 
     align-items: center;

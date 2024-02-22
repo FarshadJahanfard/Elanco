@@ -53,7 +53,8 @@ let myChart = new Chart(ctx, {
                     display: true,
                     text: 'Time Of Day',
                     color: "white",
-                    align: "center"
+                    align: "center",
+                    fontSize: "20px",
                 },
                 grid: {
                     color: "white", // Turn off grid lines for y axis
