@@ -31,14 +31,14 @@ let myChart1 = new Chart(ctx2, {
             y: {
                 beginAtZero: false, // Adjust if necessary to fit your data
                 ticks: {
-                    color: "white" // Set Y-axis ticks text color to white
+                    color: "black" // Set Y-axis ticks text color to white
                 },
                 title: {
                     display: true,
                     text: 'Steps',
                     font: {
                         size: 16},
-                    color: "white",
+                    color: "black",
                     align: "center"
                 },
             },
@@ -48,11 +48,11 @@ let myChart1 = new Chart(ctx2, {
                     text: 'Time Of Day',
                     font: {
                         size: 16},
-                    color: "white",
+                    color: "black",
                     align: "center"
                 },
                 ticks: {
-                    color: "white" // Set X-axis ticks text color to white
+                    color: "black" // Set X-axis ticks text color to white
                 }
                 
             }
@@ -60,13 +60,13 @@ let myChart1 = new Chart(ctx2, {
         legend: {
             display: true, // Set to true to display the legend
             labels: {
-                color: "white" // Set legend text color to white
+                color: "balck" // Set legend text color to white
             }
         },
         plugins: {
             legend: {
                 labels: {
-                    color: "white" // Ensure legend text color is white for newer versions of Chart.js
+                    color: "black" // Ensure legend text color is white for newer versions of Chart.js
                 }
             }
         }

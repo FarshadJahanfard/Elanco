@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #d4d5d9;
+  background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
   overflow-x: hidden;
 }
 .bottom-menu{
@@ -152,7 +152,7 @@ nav ul li a i {
 
  /* big blue widget */
   .div2 { grid-area: 1 / 2 / 3 / 4; 
-    background:rgba(43, 58, 103, 1);
+    background:red;
     border-radius: 10px;
     margin-top: 10px;
   }
@@ -171,9 +171,10 @@ nav ul li a i {
   }
 /* top small blue widget */
   .div4 { grid-area: 1 / 4 / 2 / 5; 
-    background: rgba(43, 58, 103, 1);
+    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
     border-radius: 10px;
     margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
   }
 
   .div4 h1{
