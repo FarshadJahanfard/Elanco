@@ -25,6 +25,7 @@ let myChart = new Chart(ctx, {
             backgroundColor: "red", 
             borderColor: "#FF6384",
             fill: false,
+            
         }]
     },
     options: {
