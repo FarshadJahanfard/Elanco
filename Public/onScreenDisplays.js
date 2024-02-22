@@ -29,14 +29,15 @@ function fetchDogData1(dogId) {
             return response.json();
         })
         .then(data => {
-            // Since your data is an array of objects, access the first item and then its 'Temperature (C)' property
+            // Since your data is an array of objects, access the first item and then its 'Weight (kg)' property
             const weight = data[0]["Weight (kg)"]; // Adjust based on actual data structure
+            const roundedWeight = parseFloat(weight).toFixed(1); // Convert to float and round to 1 decimal place
     
             // Update the text in the middle of the chart
-            document.getElementById('chartCenterText1').textContent = `${weight} kg`;
+            document.getElementById('chartCenterText1').textContent = `${roundedWeight} kg`;
         })
         .catch(error => {
-            console.error('Error weight data:', error);
+            console.error('Error fetching weight data:', error);
             document.getElementById('chartCenterText1').textContent = 'Error';
         });
 }
