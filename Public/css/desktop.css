@@ -171,7 +171,7 @@ nav ul li a i {
   }
 /* top small blue widget */
   .div4 { grid-area: 1 / 4 / 2 / 5; 
-    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
+    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);;
     border-radius: 10px;
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0.1);
@@ -209,7 +209,7 @@ nav ul li a i {
   }
 /* second row small blue widget right */
   .div6 { grid-area: 2 / 5 / 3 / 6; 
-    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
+    background: #0067B1;
     border-radius: 10px;
     margin-right: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0.1);
@@ -224,7 +224,7 @@ nav ul li a i {
   }
 /* second row small blue left widget */
   .div7 { grid-area: 2 / 4 / 3 / 5; 
-    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
+    background: #0067B1;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0.1);
   }
