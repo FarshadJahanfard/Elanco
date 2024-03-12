@@ -1,11 +1,15 @@
 // Assuming you have a button element with id "downloadButton"
 const downloadButton = document.getElementById("downloadButton");
 
+
 // Add a click event listener to the button
 downloadButton.addEventListener("click", async () => {
+    console.log("Download button clicked");
     try {
         // Fetch data from MongoDB
-        const response = await fetch("your-mongodb-api-endpoint");
+    let dogId = "CANINE001";
+        const url = `http://localhost:3001/api/activitylevel/dog/${dogId}`; // Enclose URL in backticks
+        const response = await fetch(url);
         const data = await response.json();
 
         // Convert data to JSON string
