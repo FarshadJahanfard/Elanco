@@ -22,10 +22,18 @@
         <div class="DropStatistic"></div>
             <select id="dropdown1">
                 <option value="" disabled selected>Please select Dog Statistic</option>
-              
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
+                
+              <script>
+                var dogStats = ["Weight", "Activity Level", "Sleep Performance", "Calories"];
+                var select = document.getElementById("dropdown1");
+                for(var i = 0; i < dogStats.length; i++) {
+                    var opt = dogStats[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    select.appendChild(el);
+                }
+              </script>
              
             </select>
         </div>
@@ -40,7 +48,12 @@
                 <option value="option3">Option 3</option>
            
         </select>
-    </div>
+        
+    </div><button>Reset</button>
+    <script>
+     
+    </script>
+
 </div>
 
         

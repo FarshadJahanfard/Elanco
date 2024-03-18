@@ -12,6 +12,7 @@ const foodIntake = require('./routes/foodIntake.js');
 const temperature = require('./routes/temperature.js');
 const weight = require('./routes/weight.js');
 const sleepingPattern = require('./routes/sleepingPattern.js');
+const weeklyWeight = require('./routes/weeklyWeight.js');
 
 
 app.get('/', (req, res) => res.redirect('/login.html'))
@@ -42,6 +43,7 @@ async function main() {
         app.use('/api/temperature', temperature);
         app.use('/api/weight', weight);
         app.use('/api/sleepingPattern', sleepingPattern);
+        app.use('/api/weeklyWeight', weeklyWeight);
         // Start the server
         app.listen(process.env.PORT, () => {
             console.log(`Server is running on port ${process.env.PORT}`);
