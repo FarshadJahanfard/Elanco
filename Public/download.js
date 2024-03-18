@@ -1,7 +1,6 @@
 // Assuming you have a button element with id "downloadButton"
 const downloadButton = document.getElementById("downloadButton");
 
-
 // Add a click event listener to the button
 downloadButton.addEventListener("click", async () => {
     console.log("Download button clicked");
@@ -32,4 +31,5 @@ downloadButton.addEventListener("click", async () => {
     } catch (error) {
         console.error("Error:", error);
     }
+
 });

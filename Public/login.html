@@ -42,7 +42,11 @@
     <script>
         document.getElementById('loginForm').onsubmit = function() {
             var username = document.getElementById('username').value;
-            window.location.href = 'index.html?username=' + encodeURIComponent(username);
+            
+            // Save the username in localStorage
+            localStorage.setItem('username', username);
+            
+            window.location.href = 'index.html';
             return false; // Prevent actual form submission
         };
     </script>

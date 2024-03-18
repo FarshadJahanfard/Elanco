@@ -21,8 +21,10 @@ function fetchDogData1(dogId) {
         });
 }
 
+var savedUsername = localStorage.getItem('username');
+
 document.addEventListener('DOMContentLoaded', function() {
     // Call the function with the specific dog ID
-    fetchDogData('CANINE001'); 
-    fetchDogData1('CANINE001');// Replace 'CANINE001' with the actual dog ID you're interested in
+    fetchDogData(savedUsername); 
+    fetchDogData1(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
 });
