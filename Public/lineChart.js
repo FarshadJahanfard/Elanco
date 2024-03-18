@@ -100,10 +100,9 @@ function updateChartData(dogId) {
 }
 
 
+var savedUsername = localStorage.getItem('username');
 // Example usage: Update chart data for a specific dog by its ID
-updateChartData('CANINE001');
-// Select the canvas element
-
+updateChartData(savedUsername);
 
 
 

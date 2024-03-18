@@ -109,11 +109,12 @@ function() {
 }
 );
 
+var savedUsername = localStorage.getItem('username');
 async function updateChart(chrt) {
   chrt = chart || chrt;
   
   try {
-    var value3 = await fetchDogData2('CANINE001');
+    var value3 = await fetchDogData2(savedUsername);
     var series = chrt.series(0);
 
     series.options({ shape_label: [{}, { text: labelText(value3) }] }, { animation: false });

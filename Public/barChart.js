@@ -100,9 +100,11 @@ function updateChartData(dogId) {
     });
 }
 
-
+var savedUsername = localStorage.getItem('username');
+    
+// Use the username as needed
 // Example usage: Update chart data for a specific dog by its ID
-updateChartData('CANINE001');
+updateChartData(savedUsername);
 // Select the canvas element
 
 
