@@ -16,10 +16,7 @@ router.get('/dog/:dogId', async (req, res) => {
                 DogID: dogId,
                 "Weight (kg)": { $gte: 0, $lte: 1000000 },
                 //date is in american time format
-             "Date":{
-                $gte: ("24-12-2023"),
-                $lte:( "25-12-2023"),
-             }
+                "Date": { $in: ["31-12-2023", "30-12-2023"] }
                
             },
            { projection}
