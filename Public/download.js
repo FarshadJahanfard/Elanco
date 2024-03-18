@@ -1,20 +1,20 @@
 // Assuming you have a button element with id "downloadButton"
 const downloadButton = document.getElementById("downloadButton");
-
+var savedUsername = localStorage.getItem('username');
 // Function to format text data (for example, adding line breaks)
 function formatData(data) {
     // Here you can apply your formatting logic
     // For demonstration purposes, let's just add line breaks after each key-value pair
     return data.replace(/({|,)/g, "$1\n");
 }
-
+var savedUsername = localStorage.getItem('username');
 // Add a click event listener to the button
 downloadButton.addEventListener("click", async () => {
     console.log("Download button clicked");
     try {
         // Fetch data from MongoDB
-        let dogId = "CANINE001";
-        const url = `http://localhost:3001/api/activitylevel/dog/${dogId}`; // Enclose URL in backticks
+        let dogId = savedUsername;
+        const url = `http://localhost:3001/api/routes/dog/${dogId}`; // Enclose URL in backticks
         const response = await fetch(url);
         const rawData = await response.text(); // Get the response as text
 
