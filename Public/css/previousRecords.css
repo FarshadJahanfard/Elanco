@@ -1,70 +1,60 @@
-.sidebar {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #f1f1f1;
-    padding-top: 20px;
-}
-
-.sidebar a {
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    color: #000;
-}
-
-.sidebar a:hover {
-    background-color: #ddd;
-}
-
-/* CSS for content */
-.content {
-    margin-left: 220px;
-    padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
+    
 }
 
 header {
-    background-color: #0067b1;
+    background-color:#0067B1;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: 85px;
     background-image: url(../images/Logo.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    padding: 5px;
+}
+.dropdown-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dropdown {
+    display: inline-block;
+    margin-right: 50px; /* Adjust spacing between dropdowns as needed */
+    padding: 50px;
+}
+
+/* CSS for dropdown button */
+.dropdown select {
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding-left: 30px;
-    padding-top: 20px;
-  }
-  
-  nav ul li {
-    padding: 8px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    padding: 5px;
-    /*no clue why this works but stays in line, covers the thing and doesnt go*/
-    display: flex;
-    flex-direction: row;
-    white-space: nowrap;
-    border-radius: 25px;
-  }
-  
-  nav ul li a:hover {
-    color: #d4d5d9;
-    background-color: #3788e5;
-  }
+    width: 200px; /* Adjust width as needed */
+    background-color: #fff; /* Adjust background color as needed */
+    color: #333; /* Adjust text color as needed */
+}
 
-  
+/* CSS for dropdown button when hovered */
+.dropdown select:hover {
+    border-color: #999; /* Adjust border color when hovered */
+}
+
+/* CSS for dropdown options */
+.dropdown select option {
+    padding: 10px;
+    background-color: #f9f9f9; /* Adjust background color as needed */
+    color: #333; /* Adjust text color as needed */
+}
+
+/* CSS for dropdown options when hovered */
+.dropdown select option:hover {
+    background-color: #e0e0e0; /* Adjust background color when hovered */
+}
+
