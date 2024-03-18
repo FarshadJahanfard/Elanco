@@ -1,10 +1,8 @@
 // Assuming you have a button element with id "downloadButton"
 const downloadButton = document.getElementById("downloadButton");
 var savedUsername = localStorage.getItem('username');
-// Function to format text data (for example, adding line breaks)
+// Function to format text data for download
 function formatData(data) {
-    // Here you can apply your formatting logic
-    // For demonstration purposes, let's just add line breaks after each key-value pair
     return data.replace(/({|,)/g, "$1\n");
 }
 var savedUsername = localStorage.getItem('username');
