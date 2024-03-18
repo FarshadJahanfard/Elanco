@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elanco Project | Pet Profile</title>
-    <link rel="stylesheet" href="./css/petProfile.css" />
+    <link rel="stylesheet" href="./css/userProfile.css" />
     <link
       rel="stylesheet"
       href="./css/desktop.css"
@@ -33,38 +33,19 @@
             alt="your pet profile"
             id="profile-pic"
           />
-          <label for="input-file">Edit</label>
-          <input
-            type="file"
-            accept="image/jpeg, image/png, image/jpg"
-            id="input-file"
-          />
 
           <!--so far placeholder but can change profile picture-->
-          <h1>Pet Profile</h1>
+          <h1>Your Profile</h1>
           <h2>CANINE001</h2>
           <ul>
-            <li>Current Weight: 5kg</li>
-            <li>Date of Birth: 20-02-2020</li>
-            <li>Breed: Canine</li>
-            <li>Owner Name: James Smith</li>
+            <li>James Smith</li>
             <li>Address: 123 Addy</li>
-            <li>Last visit: 19-12-2023</li>
-            <!--need to pull from backend-->
+            <li>Email: james@email.com</li>
+            <li>Phone number: 12312312312</li>
           </ul>
           <button class="updateBttn">Update</button>
-          <!--<button class="editBttn">Edit</button>-->
         </div>
       </div>
     </div>
-    <!--https://www.youtube.com/watch?v=xXrs4j-p3yE-->
-    <script>
-      let profilePic = document.getElementById("profile-pic");
-      let inputFile = document.getElementById("input-file");
-
-      inputFile.onchange = function () {
-        profilePic.src = URL.createObjectURL(inputFile.files[0]);
-      };
-    </script>
   </body>
 </html>
