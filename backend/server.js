@@ -17,7 +17,7 @@ const petProfile = require("./routes/petProfile.js");
 
 app.get("/", (req, res) => res.redirect("/login.html"));
 
-// app.use(express.static(path.join(__dirname, "..", "public")));
+ app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(express.static("./Public"));
 const uri = "mongodb+srv://c1022557:Elanco@eland-project.88nwkvg.mongodb.net/"; // MongoDB connection URI
 const client = new MongoClient(uri);
