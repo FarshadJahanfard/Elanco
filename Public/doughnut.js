@@ -52,26 +52,21 @@ let myChart2 = new Chart(ctx3, {
     }
 });
 
-let globalTemp = 40; // Default temperature value, update as needed
-
 
 function updateChartData(dogId) {
     fetchDogData(dogId).then(data => {
-        // Assuming you want to set globalTemp to the last temperature in the fetched data
-        if(data.length > 0) {
-            const latestTemperature = data[data.length - 1]["Temperature (C)"]; // Assuming the last item is the latest
-            globalTemp = latestTemperature; // Update the global temperature variable
-        }
-
+        // Generate labels for each data point, making them more descriptive
+ 
         const labels = data.map((_, index) => `${index + 1}`);
+        // Extract heart rates using the "Heart Rate (bpm)" property from the data
         const temperature = data.map(item => item["Temperature (C)"]);
+
 
         // Update the chart with the new data
         myChart2.data.labels = labels;
         myChart2.data.datasets[0].data = temperature;
 
-        // Update the center text with the global temperature variable
-        document.getElementById('chartCenterText').textContent = `${globalTemp}°C`;
+        document.getElementById('chartCenterText').textContent = `${temperature}°C`;
 
         // Refresh the chart to display the new data
         myChart2.update();
