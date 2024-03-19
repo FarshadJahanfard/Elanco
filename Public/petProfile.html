@@ -16,9 +16,7 @@
     <div class="container">
       <div class="div1">
         <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href="/Public/petProfile.html"
-          ><i class="fas fa-paw"></i> Pet Profile</a
-        >
+        <a href="/Public/petProfile.html"><i class="fas fa-paw"></i></a>
         <a href="#"><i class="fas fa-user"></i> User Profile</a>
         <a href="#"><i class="fas fa-landmark"></i> Elanco-GPT</a>
         <a href="#"><i class="fas fa-file-alt"></i> Documentation</a>
@@ -41,16 +39,21 @@
           />
 
           <!--so far placeholder but can change profile picture-->
-          <h1>Pet Profile</h1>
-          <h2>CANINE001</h2>
+          <h1 id="petName-placeholder"></h1>
+          <h2 id="dogid-placeholder"></h2>
           <ul>
-            <li>Current Weight: 5kg</li>
+            <!--<li>Current Weight: 5kg</li>
             <li>Date of Birth: 20-02-2020</li>
             <li>Breed: Canine</li>
             <li>Owner Name: James Smith</li>
             <li>Address: 123 Addy</li>
-            <li>Last visit: 19-12-2023</li>
+            <li>Last visit: 19-12-2023</li> -->
             <!--need to pull from backend-->
+
+            <!-- Display DOB here -->
+            <li id="dob-placeholder"></li>
+            <li id="breed-placeholder"></li>
+            <li id="address-placeholder"></li>
           </ul>
           <button class="updateBttn">Update</button>
           <!--<button class="editBttn">Edit</button>-->
@@ -59,12 +62,51 @@
     </div>
     <!--https://www.youtube.com/watch?v=xXrs4j-p3yE-->
     <script>
+      //edit profile
       let profilePic = document.getElementById("profile-pic");
       let inputFile = document.getElementById("input-file");
 
       inputFile.onchange = function () {
         profilePic.src = URL.createObjectURL(inputFile.files[0]);
       };
+
+      //fetch dog details from backwend
+      let dobPlaceholder = document.getElementById("dob-placeholder");
+      let breedPlaceholder = document.getElementById("breed-placeholder");
+      let dogidPlaceholder = document.getElementById("dogid-placeholder");
+      let petNamePlaceholder = document.getElementById("petName-placeholder");
+      let addressPlaceholder = document.getElementById("address-placeholder");
+
+      function fetchDogDetails(dogId) {
+        const url = `http://localhost:3001/api/petProfile/dog/CANINE001`; //so far specified
+        return fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.dir(data);
+            const dob = data[0]["DOB"]; //its in a single array so need select the line
+            const breed = data[0]["Breed"];
+            const id = data[0]["DogID"];
+            const name = data[0]["PetName"];
+            const address = data[0]["Address"];
+
+            dobPlaceholder.innerText = `Date of Birth: ${dob}`; //this displays it
+            breedPlaceholder.innerText = `Breed: ${breed}`;
+            dogidPlaceholder.innerText = `${dogId}`;
+            petNamePlaceholder.innerText = `${name}`;
+            addressPlaceholder.innerText = `Address: ${address}`;
+          })
+          .catch((error) => {
+            console.error("Error fetching weight data:", error);
+            document.getElementById("chartCenterText1").textContent = "Error";
+          });
+      }
+
+      fetchDogDetails("CANINE001");
     </script>
   </body>
 </html>
