@@ -52,7 +52,7 @@ function initDashboard() {
     },
     {
       class: "Temperature",
-      content: `<i class="fas fa-thermometer-half"></i> Temperature<br>${globalTemp}`,
+      content: `<i class="fas fa-thermometer-half"></i> Temperature<br>${globalTemp}°C`,
       link: ".//widgets/temp-inner.html",
     },
     {
