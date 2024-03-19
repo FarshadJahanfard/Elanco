@@ -4,7 +4,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #fff;
-  height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
 }
 .bottom-menu {
   display: none;
