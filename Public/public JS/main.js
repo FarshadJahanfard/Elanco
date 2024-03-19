@@ -24,32 +24,32 @@ function initDashboard() {
     {
       class: "Activity",
       content: '<i class="fas fa-walking"></i> Activity<br>Active',
-      link: "..//widgets/activity-inner.html", // Link to the activity.html page
+      link: ".//widgets/activity-inner.html", // Link to the activity.html page
     },
     {
       class: "Heartbeat",
       content: '<i class="fas fa-heartbeat"></i> Heartbeat<br>avg. 52 bpm ',
-      link: "heartbeat.html", // Link to the heartbeat.html page
+      link: ".//widgets/heart-inner.html", // Link to the heartbeat.html page
     },
     {
       class: "Calories Burnt",
       content: '<i class="fas fa-fire"></i> Calories Burnt<br>104 Calories',
-      link: "calories.html", // Link to the calories.html page
+      link: ".//widgets/calories-inner.html", // Link to the calories.html page
     },
     {
       class: "Water Intake",
       content: '<i class="fas fa-tint"></i> Water Intake<br>400ml',
-      link: "water.html", // Link to the water.html page
+      link: ".//widgets/water-inner.html", // Link to the water.html page
     },
     {
       class: "Temperature",
       content: '<i class="fas fa-thermometer-half"></i> Temperature<br>20oC',
-      link: "temperature.html", // Link to the temperature.html page
+      link: ".//widgets/temp-inner.html", // Link to the temperature.html page
     },
     {
       class: "Breathing Rate",
       content: '<i class="fas fa-lungs"></i> 66 bpm<br>avg. 52 bpm',
-      link: "breathing.html", // Link to the breathing.html page
+      link: ".//widgets/breathing-inner.html", // Link to the breathing.html page
     },
   ];
 
