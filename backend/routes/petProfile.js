@@ -16,6 +16,7 @@ router.get("/dog/:dogId", async (req, res) => {
     await client.connect();
     const database = client.db("Animal-Data");
     const collection = database.collection("PetDetails");
+    const specificCol = database.collection("Dogs"); //to get the weight and have it in the same route
     const dogId = req.params.dogId;
 
     // Find the dog details based on the dogId
