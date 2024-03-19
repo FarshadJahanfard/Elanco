@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  height: auto;
+  height: 200vh;
   background-color: #d4d5d9;
 }
 
@@ -58,6 +58,17 @@ h2 {
   border-radius: 50%;
 }
 
+#profileCard img:hover {
+  /*now dont need seperate css files*/
+  opacity: 0.1;
+}
+
+/*
+  .editBttn {
+    width: 80px;
+    height: 30px;
+  }*/
+
 label {
   display: block;
   padding: 12px;
@@ -65,19 +76,32 @@ label {
   border-radius: 5px;
   cursor: pointer;
   color: aliceblue;
+  /*just to center inside the profile*/
   margin-top: -13px;
-  position: relative;
+  /*bring to front*/
+  position: relative; /*absolute would mess with placement, so this brought it to the front*/
 }
 
 input {
   display: none;
 }
 
-.updateBttn {
+/*.updateBttn {
   width: 140px;
   height: 40px;
+}*/
+
+.updateBttn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .updateBttn:hover {
-  color: #c7e7ff;
+  background-color: #0056b3;
+  transform: translateY(-3px);
 }

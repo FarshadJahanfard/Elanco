@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elanco Project | Pet Profile</title>
-    <link rel="stylesheet" href="./css/petProfile.css" />
+    <link rel="stylesheet" href="./css/profile.css" />
     <link
       rel="stylesheet"
       href="./css/desktop.css"
@@ -16,7 +16,9 @@
     <div class="container">
       <div class="div1">
         <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href="/Public/petProfile.html"><i class="fas fa-paw"></i></a>
+        <a href="/Public/petProfile.html"
+          ><i class="fas fa-paw">Pet Profile</i></a
+        >
         <a href="#"><i class="fas fa-user"></i> User Profile</a>
         <a href="#"><i class="fas fa-landmark"></i> Elanco-GPT</a>
         <a href="#"><i class="fas fa-file-alt"></i> Documentation</a>
@@ -25,7 +27,7 @@
         >
       </div>
       <div class="container-card">
-        <div class="profileCard">
+        <div class="profileCard" id="profileCard">
           <img
             src="images/petProfile.jpg"
             alt="your pet profile"
@@ -42,14 +44,6 @@
           <h1 id="petName-placeholder"></h1>
           <h2 id="dogid-placeholder"></h2>
           <ul>
-            <!--<li>Current Weight: 5kg</li>
-            <li>Date of Birth: 20-02-2020</li>
-            <li>Breed: Canine</li>
-            <li>Owner Name: James Smith</li>
-            <li>Address: 123 Addy</li>
-            <li>Last visit: 19-12-2023</li> -->
-            <!--need to pull from backend-->
-
             <!-- Display DOB here -->
             <li id="dob-placeholder"></li>
             <li id="breed-placeholder"></li>
@@ -78,7 +72,7 @@
       let addressPlaceholder = document.getElementById("address-placeholder");
 
       function fetchDogDetails(dogId) {
-        const url = `http://localhost:3001/api/petProfile/dog/CANINE001`; //so far specified
+        const url = `http://localhost:3001/api/petProfile/dog/` + dogId; //does it so goes into that goes details but not secure at all
         return fetch(url)
           .then((response) => {
             if (!response.ok) {
@@ -100,6 +94,7 @@
             petNamePlaceholder.innerText = `${name}`;
             addressPlaceholder.innerText = `Address: ${address}`;
           })
+
           .catch((error) => {
             console.error("Error fetching weight data:", error);
             document.getElementById("chartCenterText1").textContent = "Error";
