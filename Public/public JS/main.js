@@ -3,18 +3,15 @@ function toggleMenu() {
   var navLinks = document.getElementById("nav-links");
   navLinks.classList.toggle("show");
 }
-
-// dashbord boxes popup
-function createBox(className, content, popupContent, popupInfo) {
+// dashbord boxes link to HTML pages
+function createBox(className, content, link) {
   const box = document.createElement('div');
   box.className = 'box ' + className;
   box.innerHTML = content;
 
-  // Adding popup functionality
+  // Adding link functionality
   box.addEventListener('click', function() {
-      // Creating a string with both popup content and information
-      const popupMessage = popupContent + '\n' + popupInfo;
-      alert(popupMessage); // You can customize this popup behavior as needed
+      window.location.href = link; // Redirect to the specified HTML page
   });
 
   return box;
@@ -27,49 +24,47 @@ function initDashboard() {
     {
       class: "Activity",
       content: '<i class="fas fa-walking"></i> Activity<br>Active',
-      popupContent: "Activity Popup Content",
-      popupInfo: "Additional Information for Activity",
+      link: "..//widgets/activity-inner.html", // Link to the activity.html page
     },
     {
       class: "Heartbeat",
       content: '<i class="fas fa-heartbeat"></i> Heartbeat<br>avg. 52 bpm ',
-      popupContent: "Heartbeat Popup Content",
-      popupInfo: "Additional Information for Heartbeat",
+      link: "heartbeat.html", // Link to the heartbeat.html page
     },
     {
       class: "Calories Burnt",
       content: '<i class="fas fa-fire"></i> Calories Burnt<br>104 Calories',
-      popupContent: "Calories Burnt Popup Content",
-      popupInfo: "Additional Information for Calories Burnt",
+      link: "calories.html", // Link to the calories.html page
     },
-    
     {
       class: "Water Intake",
       content: '<i class="fas fa-tint"></i> Water Intake<br>400ml',
-      popupContent: "Water Intake Popup Content",
-      popupInfo: "Additional Information for Water Intake",
+      link: "water.html", // Link to the water.html page
     },
     {
       class: "Temperature",
       content: '<i class="fas fa-thermometer-half"></i> Temperature<br>20oC',
-      popupContent: "Temperature Popup Content",
-      popupInfo: "Additional Information for Temperature",
+      link: "temperature.html", // Link to the temperature.html page
     },
     {
       class: "Breathing Rate",
       content: '<i class="fas fa-lungs"></i> 66 bpm<br>avg. 52 bpm',
-      popupContent: "Breathing Rate Popup Content",
-      popupInfo: "Additional Information for Breathing Rate",
+      link: "breathing.html", // Link to the breathing.html page
     },
   ];
 
   boxData.forEach(data => {
-      const box = createBox(data.class, data.content, data.popupContent, data.popupInfo);
+      const box = createBox(data.class, data.content, data.link);
+      box.addEventListener('click', function() {
+          window.location.href = data.link; // Redirect to the specified HTML page
+      });
       dashboard.appendChild(box);
   });
 }
 
 document.addEventListener('DOMContentLoaded', initDashboard);
+
+
 
 // active links for bottom menu
 document.addEventListener("DOMContentLoaded", function () {
