@@ -14,6 +14,8 @@ const weight = require("./routes/weight.js");
 const sleepingPattern = require("./routes/sleepingPattern.js");
 const weeklyWeight = require("./routes/weeklyWeight.js");
 const petProfile = require("./routes/petProfile.js");
+const waterIntake = require("./routes/waterIntake.js");
+const userProfile = require("./routes/userProfile.js");
 
 app.get("/", (req, res) => res.redirect("/login.html"));
 
@@ -46,6 +48,8 @@ async function main() {
     app.use("/api/sleepingPattern", sleepingPattern);
     app.use("/api/weeklyWeight", weeklyWeight);
     app.use("/api/petProfile", petProfile);
+    app.use("/api/waterIntake", waterIntake);
+    app.use("/api/userProfile", userProfile);
     // Start the server
     app.listen(process.env.PORT, () => {
       console.log(`Server is running on port ${process.env.PORT}`);
