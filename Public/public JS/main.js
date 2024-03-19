@@ -47,7 +47,7 @@ function initDashboard() {
     },
     {
       class: "Water Intake",
-      content: '<i class="fas fa-tint"></i> Water Intake<br>400ml',
+      content: `<i class="fas fa-tint"></i> Water Intake<br>${globalWater}`,
       link: ".//widgets/water-inner.html",
     },
     {
@@ -70,8 +70,7 @@ function initDashboard() {
 
 // Refresh the dashboard every 20 seconds
 setInterval(function() {
-  // Update the globalTemp variable as needed before refreshing
-  // globalTemp = fetchNewTemperature(); // You need to implement fetchNewTemperature or a similar mechanism
+
   initDashboard();
 }, 20000);
 
