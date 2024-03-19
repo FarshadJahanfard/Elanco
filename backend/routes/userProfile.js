@@ -15,7 +15,7 @@ router.get("/dog/:dogId", async (req, res) => {
     // Connect to MongoDB
     await client.connect();
     const database = client.db("Animal-Data");
-    const collection = database.collection("PetDetails");
+    const collection = database.collection("UserDetails");
     const dogId = req.params.dogId;
 
     // Find the dog details based on the dogId

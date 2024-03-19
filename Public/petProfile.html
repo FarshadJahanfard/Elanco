@@ -100,8 +100,8 @@
             document.getElementById("chartCenterText1").textContent = "Error";
           });
       }
-
-      fetchDogDetails("CANINE001");
+      var saverUsername = localStorage.getItem("username"); //this makes it get the dog they logged in with
+      fetchDogDetails(saverUsername);
     </script>
   </body>
 </html>
