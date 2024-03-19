@@ -16,7 +16,7 @@ router.get('/dog/:dogId', async (req, res) => {
                 DogID: dogId,
                 "Water Intake (ml)": { $gte: 0, $lte: 1000 },
                 "Date": "31-12-2023", 
-                "Hour": {"$gte": 1, "$lte": 13} 
+                "Hour": {"$gte": 0, "$lte": 13} 
             },
             { projection }
         ).toArray();
