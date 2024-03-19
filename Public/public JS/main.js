@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuItem.classList.remove("active");
       });
 
-      // Add "active" class to the clicked menu item
+      // Add "active" class to the clicked menu item  
       item.classList.add("active");
     });
   });
