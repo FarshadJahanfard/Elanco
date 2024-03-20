@@ -73,15 +73,6 @@ h1, h2 {
     }
 }
 
-
-
-
-
-
-
-
-
-
 .Container-inner{
     width: 100%;
     display: flex;
@@ -113,7 +104,6 @@ h1, h2 {
     padding: 10px;
     transition: transform 0.3s ease; 
 }
-
 
 .bottom-menu.hidden {
     transform: translateY(100%); 
@@ -154,7 +144,6 @@ h1, h2 {
     margin-bottom: 5px;
 }
 
-
 .inner-text-box{
     display: flex;
     justify-content: center;
@@ -166,7 +155,6 @@ h1, h2 {
     margin: auto;
     padding: 20px;
     border-radius: 20px;
-
 }
 
 
