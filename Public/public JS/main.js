@@ -37,7 +37,7 @@ function initDashboard() {
     },
     {
       class: "Heartbeat",
-      content: '<i class="fas fa-heartbeat"></i> Heartbeat<br>avg. 52 bpm',
+      content: `<i class="fas fa-heartbeat"></i> Heartbeat<br>${globalHR}`,
       link: ".//widgets/heart-inner.html",
     },
     {
@@ -72,7 +72,7 @@ function initDashboard() {
 setInterval(function() {
 
   initDashboard();
-}, 20000);
+}, 2000);
 
 document.addEventListener('DOMContentLoaded', function() {
   initDashboard(); // Initialize the dashboard on page load
