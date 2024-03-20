@@ -19,6 +19,7 @@ const userProfile = require("./routes/userProfile.js");
 const heartRateStatic = require("./routes/heartRateStatic.js");
 const breathingRate = require("./routes/breathingRate.js");
 const caloriesBurnt = require("./routes/caloriesBurnt.js");
+const averageTemperature = require("./routes/averageTemperature.js");
 
 app.get("/", (req, res) => res.redirect("/login.html"));
 
@@ -56,6 +57,7 @@ async function main() {
     app.use("/api/heartRateStatic", heartRateStatic);
     app.use("/api/breathingRate", breathingRate);
     app.use("/api/caloriesBurnt", caloriesBurnt);
+    app.use("/api/averageTemperature", averageTemperature);
     // Start the server
     app.listen(process.env.PORT, () => {
       console.log(`Server is running on port ${process.env.PORT}`);
