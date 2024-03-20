@@ -17,6 +17,8 @@ const petProfile = require("./routes/petProfile.js");
 const waterIntake = require("./routes/waterIntake.js");
 const userProfile = require("./routes/userProfile.js");
 const heartRateStatic = require("./routes/heartRateStatic.js");
+const breathingRate = require("./routes/breathingRate.js");
+const caloriesBurnt = require("./routes/caloriesBurnt.js");
 
 app.get("/", (req, res) => res.redirect("/login.html"));
 
@@ -52,6 +54,8 @@ async function main() {
     app.use("/api/waterIntake", waterIntake);
     app.use("/api/userProfile", userProfile);
     app.use("/api/heartRateStatic", heartRateStatic);
+    app.use("/api/breathingRate", breathingRate);
+    app.use("/api/caloriesBurnt", caloriesBurnt);
     // Start the server
     app.listen(process.env.PORT, () => {
       console.log(`Server is running on port ${process.env.PORT}`);

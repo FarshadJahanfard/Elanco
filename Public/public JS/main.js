@@ -42,7 +42,7 @@ function initDashboard() {
     },
     {
       class: "Calories Burnt",
-      content: '<i class="fas fa-fire"></i> Calories Burnt<br>104 Calories',
+      content: `<i class="fas fa-fire"></i> Calories Burnt<br>${globalCB}`,
       link: ".//widgets/calories-inner.html",
     },
     {
@@ -57,7 +57,7 @@ function initDashboard() {
     },
     {
       class: "Breathing Rate",
-      content: '<i class="fas fa-lungs"></i> 66 bpm<br>avg. 52 bpm',
+      content: `<i class="fas fa-lungs"></i>Breathing Rate<br>${globalBR}`,
       link: ".//widgets/breathing-inner.html",
     },
   ];

@@ -13,7 +13,6 @@ async function fetchHeartRate(dogId) {
 
       globalHR = heartRateStatic
 
-      console.log("Total Water Intake:", totalWaterIntake);
 
       return totalWaterIntake;
   } catch (error) {
