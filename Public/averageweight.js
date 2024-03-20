@@ -1,4 +1,4 @@
-function fetchDogData1(dogId) {
+function fetchDogWeight(dogId) {
     const url = `http://localhost:3001/api/weight/dog/${dogId}`;
     return fetch(url)
         .then(response => {
@@ -14,6 +14,8 @@ function fetchDogData1(dogId) {
     
             // Update the text in the middle of the chart
             document.getElementById('AverageWeight').textContent = `${weight} kg`;
+
+            console.log(weight)
         })
         .catch(error => {
             console.error('Error fetching weight data:', error);
@@ -25,6 +27,5 @@ var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
     // Call the function with the specific dog ID
-    fetchDogData(savedUsername); 
-    fetchDogData1(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
+    fetchDogWeight(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
 });
