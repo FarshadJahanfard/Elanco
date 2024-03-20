@@ -170,7 +170,7 @@ nav a:hover {
 }
 
 /* Media query to show/hide burger menu based on screen size */
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     .burger-menu {
         display: block;
     }
@@ -182,11 +182,17 @@ nav a:hover {
 }
 
 
-/* Dashboard title  */
+/* Mpbile Dashboard title  */
 .index-dash{
     color: #fff;
     text-align: center;
-    text-decoration: underline;
+   
     text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #91a6ff 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform:uppercase;
 }
 

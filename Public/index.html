@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Elanco Project | Home</title>
-    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 767px)">
-    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1024px)">
-    <link rel="stylesheet" href="inner-pages.css">
-    
+    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 1020px)">
+    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1021px)">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="https://code.jscharting.com/latest/jscharting.js"></script>
     <script type="text/javascript" src="https://code.jscharting.com/latest/modules/types.js"></script>
-
-
-
 </head>
 <body>
     <header>
@@ -29,7 +24,7 @@
             <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <a href="./petProfile.html"><i class="fas fa-paw"></i> Pet Profile</a>
             <a href="./userProfile.html"><i class="fas fa-user"></i> User Profile</a>
-            <a href="#"><i class="fas fa-landmark"></i> Elanco-GPT</a>
+            <a href="https://www.elanco.com/en-us/products-and-services"><i class="fas fa-landmark"></i> Elanco-GPT</a>
             <a href="./documentation.html"><i class="fas fa-file-alt"></i> Documentation</a>
             <a href="previousRecords.html"><i class="fas fa-clipboard-list"></i> Previous Records</a>
             <a class="logout" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -84,10 +79,10 @@
                 <nav>
                     <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
                     <ul id="nav-links">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Pet Profile</a></li>
-                        <li><a href="#">User Profile</a></li>
-                        <li><a href="#">Log Out</a></li>
+                        <li><a href="./documentation.html">Documentation</a></li>
+                        <li><a href="./petProfile.html">Pet Profile</a></li>
+                        <li><a href="./userProfile.html">User Profile</a></li>
+                        <li><a href="./login.html">Log Out</a></li>
                     </ul>
                     <img src="./images/Logo.png" alt="Your Logo" class="logo" id="LOGO">
                 </nav>
@@ -98,8 +93,9 @@
     <!-- Bottom menu -->
     <div class="bottom-menu" id="bottomMenu">
         <a href="#home"><i class="fas fa-home"></i> Home</a>
-        <a href="#elanco-gpt"><i class="fas fa-comment"></i> Elanco-GPT</a>
-        <a href="#dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="https://www.elanco.com/en-us/products-and-services"><i class="fas fa-comment"></i> Elanco-GPT</a>
+        <a href="./documentation.html"><i class="fas fa-file-alt"></i> Documentation</a>
+
     </div>
 
     <div id="dashboard" class="dashboard-container"></div>

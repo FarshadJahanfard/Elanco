@@ -16,15 +16,70 @@ h1{
     border-bottom: 4px solid #e5e5e5;
     padding: 20px 0;
     color: aliceblue;
+    /* text-shadow : 2px 2px 2px #ffffff; */
+    font-family: 'Times New Roman', Times, serif;
+    background-image: linear-gradient(45deg, #0352c0, #01c4e7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform:uppercase;
 }
+
 h2{
     color: #fff;
+    text-shadow : 2px 2px 2px #000;
 }
 p{
     color: aliceblue;
     text-align: center;
     margin-top: 20px;
+    font-family:Sans-serif;
+    text-shadow : 2px 2px 2px #000;
+    font-size: 1.2em;  
+    letter-spacing: .3px;
+    line-height: 1.5;
 }
+
+
+/* p animation */
+p {
+    animation: slide-in 0.5s ease forwards;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* h1 and h2 animation  */
+
+h1, h2 {
+    animation: appear 0.5s ease forwards;
+}
+
+@keyframes appear {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 .Container-inner{
