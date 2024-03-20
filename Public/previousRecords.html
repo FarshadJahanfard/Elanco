@@ -57,9 +57,9 @@
               
               <td>Weight</td>
         
-            <div id = "AverageWeight">
-                <td></td>
-            </div>
+            
+                <td><div id = "AverageWeight"></div></td>
+            
                 <td></td>
                 <td></td>
             
@@ -92,41 +92,7 @@
           </table>
 
     </div>
-    <!-- <div id="weeklWeight">  
-        <h1 style="font-size: larger;">Weight (kg)</h1>
-                <div id="weeklyWeight" style="position: relative; top: 25%; left: 38%; color: white; font-size: 28px; margin: auto;">
-
-                
-
-    </div>        
-        <script>
-         
-        function fetchDogWeeklyWeight(dogId) {
-  const url = `http://localhost:3001/api/weeklWeight/dog/${dogId}`; // Enclose URL in backticks
-  return fetch(url).then(response => {
-      if (!response.ok) {
-          throw new Error('Network response was not ok');
-      }
-      return response.json();
-      console.log(response.json());
-  });
-}
-      
-       </script>
-       
-        
-    </div><button>Reset</button>
-    <script src="../backend/routes/weeklyWeight.js">
-     
-    </script>
-
-</div>
-
-        
-
-         
-
-          </script>    -->
+   
 
           <script src="./averageWeight.js"></script>
 </body>
