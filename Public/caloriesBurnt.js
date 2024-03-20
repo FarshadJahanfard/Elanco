@@ -11,9 +11,9 @@ async function fetchCaloriesBurnt(dogId) {
 
       const caloriesBurnt = data.reduce((acc, item) => acc + parseFloat(item["Calorie Burn"]), 0);
 
-      globalCB = caloriesBurnt
+      globalCB = (caloriesBurnt.toFixed(1))
 
-      console.log("Calories Burnt:", caloriesBurnt)
+
 
       return globalCB;
   } catch (error) {
