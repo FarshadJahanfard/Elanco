@@ -13,6 +13,11 @@ async function fetchHeartRate(dogId) {
 
       globalHR = heartRateStatic
 
+      var heartbeatValueElement = document.querySelector('.heartbeat-value');
+      if (heartbeatValueElement) {
+        heartbeatValueElement.textContent = globalHR + ' bpm';
+      }
+
 
       return totalWaterIntake;
   } catch (error) {
