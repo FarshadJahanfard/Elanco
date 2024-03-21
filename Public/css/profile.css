@@ -82,7 +82,33 @@ label {
   position: relative; /*absolute would mess with placement, so this brought it to the front*/
 }
 
-input {
+.profileCard input {
+  display: none;
+}
+
+/*on default hide form, then button shows it*/
+.updateForm {
+  padding-top: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.updateForm input {
+  display: block;
+  border-radius: 50px;
+  width: 100%;
+  margin-bottom: 2%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.updateForm ::placeholder {
+  padding-left: 10px;
+  color: black;
+}
+
+/*this is for */
+.textDetails {
   display: none;
 }
 

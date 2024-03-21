@@ -35,4 +35,18 @@ router.get("/dog/:dogId", async (req, res) => {
   }
 });
 
+//Update:
+/*
+router.post("/dog/:dogId", async (req, res) => {
+  try {
+    console.log(req.body.udAdress);
+    const newData = await dataController.updateAddress(req.address);
+    console.log(newData);
+    res.json(newData);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Not fetched" });
+  }
+});*/
+
 module.exports = router;
