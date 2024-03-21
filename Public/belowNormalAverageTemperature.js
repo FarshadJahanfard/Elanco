@@ -82,11 +82,17 @@ fetchDogYearlyTemperature(savedUsername);// Replace 'CANINE001' with the actual 
 });
 
 function compareTemperature() {
+   
     const weeklyTemperatureElement = document.getElementById('AverageTemperature');
     const yearlyTemperatureElement = document.getElementById('AvgYearTemp');
 
     const weeklyTemperature = parseFloat(weeklyTemperatureElement.textContent);
+    console.log(weeklyTemperatureElement.textContent);
+   
     const yearlyTemperature = parseFloat(yearlyTemperatureElement.textContent);
+    console.log(yearlyTemperatureElement.textContent);
+    console.log(weeklyTemperature);
+    console.log(yearlyTemperature);
 
     let TempResult = '';
 
@@ -108,8 +114,9 @@ function compareTemperature() {
     else if (TempResult === 'normal') {
         document.getElementById('TempResult').style.color = 'black';
     } 
-    document.getElementById('TempResult').textContent = TempResult;
+    
 }
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(savedUsername) {
     compareTemperature();
+    
 });
