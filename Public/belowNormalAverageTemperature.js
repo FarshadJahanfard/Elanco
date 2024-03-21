@@ -80,6 +80,18 @@ document.addEventListener('DOMContentLoaded', function() {
 // Call the function with the specific dog ID
 fetchDogYearlyTemperature(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
 });
+// Ensure that the compareTemperature function is called after the fetchDogAverageTemp and fetchDogYearlyTemperature functions have completed.
+// This can be done by using Promise.all to wait for both fetch requests to complete before calling compareTemperature.
+
+document.addEventListener('DOMContentLoaded', function() {
+    Promise.all([fetchDogAverageTemp(savedUsername), fetchDogYearlyTemperature(savedUsername)])
+        .then(() => {
+            compareTemperature();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
 
 function compareTemperature() {
    
