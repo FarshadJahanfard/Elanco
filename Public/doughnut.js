@@ -88,9 +88,9 @@ function updateChartData(dogId) {
         console.error('Error fetching or updating chart data:', error);
     });
 }
-
 var savedUsername = localStorage.getItem('username');
 
-// Example usage: Update chart data for a specific dog by its ID
-updateChartData(savedUsername);
-// Select the canvas element
+document.addEventListener('DOMContentLoaded', function() {
+  // Call the function with the specific dog ID
+  updateChartData(savedUsername); // Replace 'CANINE001' with the actual dog ID you're interested in
+});

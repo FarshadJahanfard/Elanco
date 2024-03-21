@@ -11,7 +11,7 @@ async function fetchHeartRate(dogId) {
 
       const heartRateStatic = data.reduce((acc, item) => acc + parseFloat(item["Heart Rate (bpm)"]), 0);
 
-      globalHR = heartRateStatic
+      globalHR = heartRateStatic;
 
       var heartbeatValueElement = document.querySelector('.heartbeat-value');
       if (heartbeatValueElement) {
