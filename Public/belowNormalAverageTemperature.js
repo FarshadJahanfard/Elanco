@@ -107,15 +107,19 @@ function compareTemperature() {
     console.log(yearlyTemperature);
 
     let TempResult = '';
+    let TempRecommendation = '';
 
     if (weeklyTemperature < yearlyTemperature) {
         TempResult = 'below';
+        TempRecommendation = 'Keep Canine warm and monitor temperature and see a vet if necessary';
     } else if (weeklyTemperature === yearlyTemperature) {
         TempResult = 'normal';
+        TempRecommendation = 'Keep Canine under same conditions'
     } else {
         TempResult = 'above';
+        TempRecommendation = 'Keep Canine cool and monitor temperature and see a vet if necessary';
     }
-
+    document.getElementById('TempRecommendation').textContent = TempRecommendation;
     document.getElementById('TempResult').textContent = TempResult;
     if (TempResult === 'above') {
         document.getElementById('TempResult').style.color = 'blue';
