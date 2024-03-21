@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elanco Project | Pet Profile</title>
-    <link rel="stylesheet" href="./css/profile.css" />
-    <link
-      rel="stylesheet"
-      href="./css/desktop.css"
-      media="(min-width: 768px)"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <header></header>
-    <div class="container">
-      <div class="div1">
-        <a href="./index.html"
-          ><i class="fas fa-tachometer-alt"></i> Dashboard</a
-        >
-        <a href="./petProfile.html"><i class="fas fa-paw"></i> Pet Profile</a>
-        <a href="#"><i class="fas fa-user"></i> User Profile</a>
-        <a href="#"><i class="fas fa-landmark"></i> Elanco-GPT</a>
-        <a href="./documentation.html"
-          ><i class="fas fa-file-alt"></i> Documentation</a
-        >
-        <a class="logout" href="./login.html"
-          ><i class="fas fa-sign-out-alt"></i> Logout</a
-        >
-      </div>
-      <div class="container-card">
-        <div class="profileCard">
-          <img
-            src="images/petProfile.jpg"
-            alt="your pet profile"
-            id="profile-pic"
-          />
 
-          <!--so far placeholder but can change profile picture-->
-          <h1>Your Profile</h1>
-          <h2 id="dogid-placeholder"></h2>
-          <ul>
-            <li id="name-placeholder"></li>
-            <li id="email-placeholder"></li>
-            <li id="phone-placeholder"></li>
-          </ul>
-          <!--<button class="updateBttn">Update</button>-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elanco Project | Pet Profile</title>
+  <link rel="stylesheet" href="./css/profile.css" />
+  <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 768px)" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <!-- dont remove stuff for here is in the css :) -->
+  </header>
+  <div class="container">
+    <div class="div1">
+
+      <div class="div1">
+        <a href="./index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="./petProfile.html"><i class="fas fa-paw"></i> Pet Profile</a>
+        <a href="./userProfile.html"><i class="fas fa-user"></i> User Profile</a>
+        <a href="https://www.elanco.com/en-us/products-and-services"><i class="fas fa-landmark"></i> Elanco-GPT</a>
+        <a href="./documentation.html"><i class="fas fa-file-alt"></i> Documentation</a>
+        <a href="previousRecords.html"><i class="fas fa-clipboard-list"></i> Previous Records</a>
+        <a class="logout" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+        <div class="socials">
+          <div class="socials">
+            <a href="https://www.facebook.com/elancoanimalhealth/?locale=en_GB" target="_blank"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/elanco?lang=en-GB" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/elanco4animals/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/elanco" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>
-    <script>
-      //fetch dog details from backwend
-      let namePlaceholder = document.getElementById("name-placeholder");
-      let dogidPlaceholder = document.getElementById("dogid-placeholder");
-      let emailPlaceholder = document.getElementById("email-placeholder");
-      let phonePlaceholder = document.getElementById("phone-placeholder");
+    <div class="container-card">
+      <div class="profileCard">
+        <img src="images/petProfile.jpg" alt="your pet profile" id="profile-pic" />
 
-      function fetchDogDetails(dogId) {
-        const url = `http://localhost:3001/api/userProfile/dog/` + dogId; //does it so goes into that goes details but not secure at all
-        return fetch(url)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            return response.json();
-          })
-          .then((data) => {
-            console.dir(data);
-            const name = data[0]["Name"];
-            const dogid = data[0]["DogID"];
-            const email = data[0]["Email"];
-            const phone = data[0]["PhoneNumber"];
+        <!--so far placeholder but can change profile picture-->
+        <h1>Your Profile</h1>
+        <h2 id="dogid-placeholder"></h2>
+        <ul>
+          <li id="name-placeholder"></li>
+          <li id="email-placeholder"></li>
+          <li id="phone-placeholder"></li>
+        </ul>
+        <!--<button class="updateBttn">Update</button>-->
+      </div>
+    </div>
+  </div>
 
-            namePlaceholder.innerText = `${name}`;
-            dogidPlaceholder.innerText = `${dogid}`;
-            emailPlaceholder.innerText = `Email: ${email}`;
-            phonePlaceholder.innerText = `Phone number: ${phone}`;
-          })
 
-          .catch((error) => {
-            console.error("Error fetching data:", error);
-            document.getElementById("chartCenterText1").textContent = "Error";
-          });
-      }
-      var saverUsername = localStorage.getItem("username"); //this makes it get the dog they logged in with
-      fetchDogDetails(saverUsername);
-    </script>
-  </body>
+  <script>
+    //fetch dog details from backwend
+    let namePlaceholder = document.getElementById("name-placeholder");
+    let dogidPlaceholder = document.getElementById("dogid-placeholder");
+    let emailPlaceholder = document.getElementById("email-placeholder");
+    let phonePlaceholder = document.getElementById("phone-placeholder");
+
+    function fetchDogDetails(dogId) {
+      const url = `http://localhost:3001/api/userProfile/dog/` + dogId; //does it so goes into that goes details but not secure at all
+      return fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.dir(data);
+          const name = data[0]["Name"];
+          const dogid = data[0]["DogID"];
+          const email = data[0]["Email"];
+          const phone = data[0]["PhoneNumber"];
+
+          namePlaceholder.innerText = `${name}`;
+          dogidPlaceholder.innerText = `${dogid}`;
+          emailPlaceholder.innerText = `Email: ${email}`;
+          phonePlaceholder.innerText = `Phone number: ${phone}`;
+        })
+
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          document.getElementById("chartCenterText1").textContent = "Error";
+        });
+    }
+    var saverUsername = localStorage.getItem("username"); //this makes it get the dog they logged in with
+    fetchDogDetails(saverUsername);
+  </script>
+</body>
+
 </html>
