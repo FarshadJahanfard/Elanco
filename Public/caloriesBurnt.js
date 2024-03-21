@@ -13,6 +13,11 @@ async function fetchCaloriesBurnt(dogId) {
 
       globalCB = (caloriesBurnt.toFixed(1))
 
+      var caloriesBurntValueElement = document.querySelector('.caloriesburnt-value');
+      if (caloriesBurntValueElement) {
+        caloriesBurntValueElement.textContent = globalCB + 'Calories Burnt';
+      }
+
 
 
       return globalCB;

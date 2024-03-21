@@ -13,7 +13,10 @@ async function fetchWaterIntake(dogId) {
 
       globalWater = totalWaterIntake
 
-      console.log("Total Water Intake:", totalWaterIntake);
+      var waterIntakeValueElement = document.querySelector('.waterintake-value');
+      if (waterIntakeValueElement) {
+        waterIntakeValueElement.textContent = globalWater + 'Water Intake (ml)';
+      }
 
       return totalWaterIntake;
   } catch (error) {
