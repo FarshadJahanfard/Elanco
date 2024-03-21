@@ -32,7 +32,7 @@ function initDashboard() {
   const boxData = [
     {
       class: "Activity",
-      content: '<i class="fas fa-walking"></i> Activity<br>Active',
+      content: `<i class="fas fa-walking"></i> Activity<br>${globalAL}`,
       link: ".//widgets/activity-inner.html",
     },
     {

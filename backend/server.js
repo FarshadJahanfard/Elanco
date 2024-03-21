@@ -26,6 +26,7 @@ const yearlyAverageWeight = require("./routes/yearlyAverageWeight.js");
 const yearlyAverageTemperature = require("./routes/yearlyAverageTemperature.js");
 const yearlyBreathingRate = require("./routes/yearlyBreathingRate.js");
 const yearlyFoodIntake = require("./routes/yearlyFoodIntake.js");
+const dailyActivityLevel = require("./routes/dailyActivityLevel.js");
 
 app.get("/", (req, res) => res.redirect("/login.html"));
 
@@ -70,6 +71,7 @@ async function main() {
     app.use("/api/yearlyAverageTemperature", yearlyAverageTemperature);
     app.use("/api/yearlyBreathingRate", yearlyBreathingRate);
     app.use("/api/yearlyFoodIntake", yearlyFoodIntake);
+    app.use("/api/dailyActivityLevel", dailyActivityLevel);
     // Start the server
     app.listen(process.env.PORT, () => {
       console.log(`Server is running on port ${process.env.PORT}`);
