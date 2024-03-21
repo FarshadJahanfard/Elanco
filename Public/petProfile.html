@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elanco Project | Pet Profile</title>
-    <link rel="stylesheet" href="./css/profile.css"/> 
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 768px)"/>
+    <link rel="stylesheet" href="./css/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/desktop.css"
+      media="(min-width: 768px)"
+    />
   </head>
   <body>
     <header></header>
@@ -41,18 +48,32 @@
           <h1 id="petName-placeholder"></h1>
           <h2 id="dogid-placeholder"></h2>
           <ul>
-            <!-- Display DOB here -->
             <li id="dob-placeholder"></li>
             <li id="breed-placeholder"></li>
             <li id="address-placeholder"></li>
           </ul>
-          <button class="updateBttn">Update</button>
+          <!--<form
+            class="updateForm"
+            action="http://localhost:3001/api/petProfile/dog/CANINE001"
+            method="post"
+          >
+            <input type="text" id="udDob" placeholder="" readonly />
+            <input type="text" id="udBreed" placeholder="" readonly />
+            <input type="text" id="udAddress" name="udAddress" placeholder="" />
+            <button id="updateBttn" type="submit">Update</button>
+          </form>
+        -->
           <!--<button class="editBttn">Edit</button>-->
         </div>
       </div>
     </div>
     <!--https://www.youtube.com/watch?v=xXrs4j-p3yE-->
     <script>
+      /*forms visibility: should change to toggle on and off, so make change if can*/
+      const updateForm = document.querySelector(".updateForm");
+      const bttn = document.querySelector("#updateBttn");
+      const newAddress = document.querySelector("#udAddress");
+
       //edit profile
       let profilePic = document.getElementById("profile-pic");
       let inputFile = document.getElementById("input-file");
@@ -90,6 +111,14 @@
             dogidPlaceholder.innerText = `${dogId}`;
             petNamePlaceholder.innerText = `${name}`;
             addressPlaceholder.innerText = `Address: ${address}`;
+
+            document.getElementById("udDob").setAttribute("placeholder", dob);
+            document
+              .getElementById("udBreed")
+              .setAttribute("placeholder", breed);
+            document
+              .getElementById("udAddress")
+              .setAttribute("placeholder", address);
           })
 
           .catch((error) => {
@@ -99,6 +128,28 @@
       }
       var saverUsername = localStorage.getItem("username"); //this makes it get the dog they logged in with
       fetchDogDetails(saverUsername);
+
+      // updating address
+      /*
+      async function updateAddress(dogId, address) {
+        try {
+          const updatedAddress = await PetDetails.findByIdAndUpdate(
+            dogId,
+            address,
+            { new: true }
+          );
+          return updatedAddress;
+        } catch (error) {
+          console.error("Error updating data:", error);
+          return { error: "Failed to update data" };
+        }
+      }
+      bttn.addEventListener("click", () => {
+        updateForm.style.display = "block";
+        bttn.style.backgroundColor = "grey";
+        updateAddress(dogId, newAddress.value);
+
+      }); */
     </script>
   </body>
 </html>
