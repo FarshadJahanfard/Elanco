@@ -90,15 +90,33 @@ function compareWeights() {
     const yearlyWeight = parseFloat(yearlyWeightElement.textContent);
 
     let comparisonResult = '';
+    let WeightRecommendation = '';
 
     if (weeklyWeight < yearlyWeight) {
         comparisonResult = 'below';
+        WeightRecommendation = 'Increase food Intake and reduce activity level';
     } else if (weeklyWeight === yearlyWeight) {
         comparisonResult = 'normal';
+        WeightRecommendation = 'Maintain food Intake and activity level';
+
     } else {
         comparisonResult = 'above';
+        WeightRecommendation = 'Reduce food Intake and increase activity level';
     }
 
+    if(comparisonResult === 'below' && weeklyWeight<32) {
+        WeightRecommendation = 'Increase food Intake and reduce activity level';
+    }
+    else if(comparisonResult === 'normal' && weeklyWeight<32) {
+        WeightRecommendation = 'Increase food Intake  slightly to reach healthy level ';
+    }
+    else if(comparisonResult === 'normal' && weeklyWeight>32) {
+        WeightRecommendation = 'Reduce food Intake and increase activity level';
+    }
+    else if(comparisonResult === 'above' && weeklyWeight>32) {
+        WeightRecommendation = 'Maintain Current food Intake and activity level';
+    }
+    document.getElementById('WeightRecommendation').textContent = WeightRecommendation;
     document.getElementById('comparisonResult').textContent = comparisonResult;
     if (comparisonResult === 'above') {
         document.getElementById('comparisonResult').style.color = 'blue';
