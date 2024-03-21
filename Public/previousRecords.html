@@ -59,7 +59,7 @@
               <th>Recommendation</th>
             </tr>
             <tr>
-              <td>Alfreds Futterkiste</td>
+              <td class="usernameDisplay"></td>
               <td>"23-12-2023" - "30-12-2023"</td>
               
               <td>Weight</td>
@@ -69,33 +69,33 @@
             
                 <td><div id="yearlyAverage"></div></td>
                 <td><div id="comparisonResult"></div></td>
-                <td></td>
+                <td><div id="WeightRecommendation"></div></td>
             
             </tr>
             <tr>
-              <td>Centro comercial Moctezuma</td>
+              <td class="usernameDisplay"></td>
               <td>23-12-2023" - "30-12-2023</td>
               <td>Temperature</td>
               <td><div id="AverageTemperature"></div></td>
-              <td></td>
-              <td></td>
+              <td><div id="AvgYearTemp"></div></td>
+              <td><div id="TempResult"></div></td>
               <td></td>
             </tr>
             <tr>
-              <td>Ernst Handel</td>
+              <td class="usernameDisplay"></td>
               <td>23-12-2023" - "30-12-2023</td>
               <td>Breathing Rate</td>
               <td><div id="AverageBreathingRate"></div></td>
-              <td></td>
-              <td></td>
+              <td><div id="YearBreathing"></div></td>
+              <td><div id="compareBreathing"></div></td>
               <td></td>
             </tr>
             <tr>
-              <td>Island Trading</td>
+              <td class="usernameDisplay"></td>
               <td>23-12-2023" - "30-12-2023</td>
               <td>Food Intake</td>
               <td><div id="foodIntake"></div></td>
-              <td></td>
+              <td><div id="YearFood"></div></td>
               <td></td>
               <td></td>
             </tr>
@@ -111,5 +111,20 @@
           <script src="./averagefood.js"></script>
           <script src="./yearlyAverage.js"></script>
           <script src="./belowNormalAverageWeight.js"></script>
+          <script src="./yearlyAverageTemperature.js"></script>
+          <script src="./belowNormalAverageTemperature.js"></script>
+          <script src="./yearlyAverageBreathingRate.js"></script>
+          <script src="./yearlyAverageFoodIntake.js"></script>
+          <script src="./belowNormalAboveBreathing.js"></script>
+          <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              var savedUsername = localStorage.getItem('username');
+              var usernameDisplays = document.querySelectorAll('.usernameDisplay');
+              usernameDisplays.forEach(function(display) {
+                  display.innerHTML += savedUsername;
+              });
+          });
+          </script>
+            </script>
 </body>
 </html>
