@@ -13,7 +13,10 @@ async function fetchBreathingRate(dogId) {
 
       globalBR = breathingRate;
 
-      console.log("Breathing Rate:", breathingRate);
+      var breathingRateValueElement = document.querySelector('.breathingrate-value');
+      if (breathingRateValueElement) {
+        breathingRateValueElement.textContent = globalBR + ' bpm';
+      }
 
 
       return breathingRate;

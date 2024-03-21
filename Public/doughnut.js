@@ -69,6 +69,11 @@ function updateChartData(dogId) {
         // Extract heart rates using the "Heart Rate (bpm)" property from the data
         const temperature = data.map(item => item["Temperature (C)"]);
 
+        var temperatureValueElement = document.querySelector('.temperature-value');
+        if (temperatureValueElement) {
+          temperatureValueElement.textContent = globalTemp + '°C';
+        }
+
 
         // Update the chart with the new data
         myChart2.data.labels = labels;
