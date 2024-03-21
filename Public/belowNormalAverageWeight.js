@@ -101,13 +101,16 @@ function compareWeights() {
 
     document.getElementById('comparisonResult').textContent = comparisonResult;
     if (comparisonResult === 'above') {
+        document.getElementById('comparisonResult').style.color = 'blue';
+    }
+    else if (comparisonResult === 'below') {
         document.getElementById('comparisonResult').style.color = 'red';
     }
+    else if (comparisonResult === 'normal') {
+        document.getElementById('comparisonResult').style.color = 'black';
+    } 
     document.getElementById('comparisonResult').textContent = comparisonResult;
-
 }
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Call the function after fetching weights
     compareWeights();
 });
