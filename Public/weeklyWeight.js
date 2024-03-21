@@ -24,6 +24,7 @@ console.log('AverageWeekly Weight:', totalWeeklyWeightRate/data.length);
 AverageWeight = AverageWeight.toFixed(2);
 document.getElementById('AverageWeight').textContent = `${AverageWeight} (kg)`;
 console.log(data.length)
+
         
     })
     .catch(error => {
