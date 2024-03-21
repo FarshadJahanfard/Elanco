@@ -1,5 +1,5 @@
 function fetchDogWeeklyWeight(dogId) {
-    const url = `http://localhost:3001/api/aweeklyWeight/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/weeklyWeight/dog/${dogId}`; // Enclose URL in backticks
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
