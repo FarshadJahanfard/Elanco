@@ -93,15 +93,19 @@ function compareFoodIntakes() {
     const yearlyFoodIntake = parseFloat(yearlyFoodIntakeElement.textContent);
 
     let compareFoodIntake = '';
+    let FoodRecommendation = '';
 
     if (averageFoodIntake < yearlyFoodIntake) {
         compareFoodIntake = 'below';
+        FoodRecommendation = 'Increase food intake slightly or majorily if Canine is underweight';
     } else if (averageFoodIntake === yearlyFoodIntake) {
         compareFoodIntake = 'normal';
+        FoodRecommendation = 'Maintain food intake or increase/decrease depending on dog weight';
     } else {
         compareFoodIntake = 'above';
+        FoodRecommendation = 'Reduce food intake and increase activity level if Canine is overweight';
     }
-
+    document.getElementById('FoodRecommendation').textContent = FoodRecommendation;
     document.getElementById('compareFood').textContent = compareFoodIntake;
     if (compareFoodIntake === 'above') {
         document.getElementById('compareFood').style.color = 'blue';
