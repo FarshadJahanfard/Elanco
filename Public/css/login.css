@@ -1,116 +1,128 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    box-sizing: border-box;
-    background-color:rgb(240, 240, 240);
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: rgb(240, 240, 240);
+  padding: 20px;
 }
 
-  
-  .background {
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(../images/doggg.png);
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    animation: slide 20s infinite linear;
-    left: 240px;
-    
-  }
-  
- 
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  
+.background {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/doggg.png);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation: slide 20s infinite linear;
+  left: 240px;
+  padding-top: 50px; /*in a specific size the dogs nose gets blocked by logo*/
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.left,
+.right {
+  width: 40%;
+  padding: 45px;
+  border: 8px solid #ccc;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  margin-left: -500px;
+}
+
+.left {
+  margin-right: 20px;
+}
+
+.right {
+  margin-left: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 1044px) {
   .left,
   .right {
-    width: 40%;
-    padding: 45px;
-    border: 8px solid #ccc;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    position: relative;
-    margin-left: -500px;
+    width: 80%;
+    margin-left: 10px;
+    margin-bottom: 20px;
   }
-  
-  .left {
-    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
-  
+
+  .left,
   .right {
-    margin-left: 20px;
-  }
-  
-  h2 {
-    margin-top: 0;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-    
-    .left,
-    .right {
-      width: 100%;
-      margin: 0;
-      margin-bottom: 20px;
-    }
-    
-  }
- 
-
-  .login-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color:red;
+    margin: 0;
+    margin-bottom: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
-  .right{
-    display: none;
+  #password,
+  #username {
+    width: 90%;
   }
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.right {
+  display: none;
+}
