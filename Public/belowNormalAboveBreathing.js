@@ -93,15 +93,19 @@ function compareBreathingRates() {
     const yearlyBreathingRate = parseFloat(yearlyBreathingRateElement.textContent);
 
     let compareBreathing = '';
+    let BreathingRecommendation = '';
 
     if (averageBreathingRate < yearlyBreathingRate) {
         compareBreathing = 'below';
+        BreathingRecommendation = 'Check Canine Breathing and contact Vet If Necessary';
     } else if (averageBreathingRate === yearlyBreathingRate) {
         compareBreathing = 'normal';
+        BreathingRecommendation = 'Monitor Breathing as normal';
     } else {
         compareBreathing = 'above';
+        BreathingRecommendation = 'Check Canine Breathing, reduce activity level and contact Vet If Necessary';
     }
-
+    document.getElementById('BreathingRecommendation').textContent = BreathingRecommendation;
     document.getElementById('compareBreathing').textContent = compareBreathing;
     if (compareBreathing === 'above') {
         document.getElementById('compareBreathing').style.color = 'blue';
