@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    background: linear-gradient(175.15deg, #222F3B 0%, rgba(34, 34, 59, 0.895) 48.29%, #0067B1 96.57%);
+    
+}
+
+header {
+    background-color:#0067B1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85px;
+    background-image: url(../images/Logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.doc-title{
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+.doc-data{
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+    list-style: none;
+    padding-left: 0;
+    background-color: rgba(43, 58, 103, 1);
+    width: 70%;
+    margin: auto;
+    border-radius: 50px;
+    padding: 10px;
+    height: 500px;
+    margin-top: 40px;
+}
+
+h1 {display: flex;
+    justify-content: center;
+    border-bottom: 4px solid #e5e5e5;
+    padding: 20px 0;
+    color: aliceblue;
+    /* text-shadow : 2px 2px 2px #ffffff; */
+    font-family: 'Times New Roman', Times, serif;
+    background-image: linear-gradient(236deg, #30c003, #01c4e7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform:uppercase;
+}
+
+p{
+    color:#fff;
+    padding-top: 30px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Style the download icon */
+.download-button i {
+    margin-right: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .doc-data{
+        width: 90%;
+        height: auto;
+        margin-top: 4rem;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    #downloadButton, .download-button {
+        margin-top: 20px;
+        width: 20%;
+        justify-content: center;
+        display: flex;
+        margin: auto;
+    }
+    
+    p {
+        font-size: 15px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .download-button {
+        padding: 8px 16px;
+    }
+    header {
+        height: 100px;
+    }
+}
+
+
+
+/* Animation stuff */
+
+
+#downloadButton{   
+    animation: appear 1s ease forwards, bounce 2s ease-in-out ;
+    transform-origin: center;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0) rotate(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+h1, p, .download-button {
+    animation: appear 0.5s ease forwards;
+}
+
+@keyframes appear {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

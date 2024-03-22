@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Elanco Project | Previous Records</title>
+  <link rel="stylesheet" href="./css/previousRecords.css" media="(min-width: 768px)">
+
+
+
+</head>
+
+<body>
+  <header>
+    <!-- DONT REMOVE logo and stuff are in the css file -->
+  </header>
+
+
+  <div class="parent">
+  </div>
+  <style>
+    table {
+      font-family: "Roboto", sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #f5f5f5;
+    }
+
+    td,
+    th {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      text-align: left;
+      padding: 5px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+
+
+    @media only screen and (max-width: 768px) {
+
+      table {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        width: 100%;
+      }
+
+      /* Adjust row display to stack vertically */
+      tr {
+        display: block;
+        margin-bottom: 10px;
+        /* Add some space between rows */
+        border-bottom: 1px solid #ddd;
+        /* Add border between rows for better readability */
+      }
+
+      /* Style table headers */
+      th {
+        display: block;
+        text-align: left;
+        /* Align headers to the left */
+        font-weight: bold;
+        padding: 10px;
+        background-color: #f2f2f2;
+        /* Add background color to headers */
+        border-right: 1px solid #ddd;
+        /* Add border between headers for better readability */
+      }
+
+      /* Style table cells */
+      td {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        /* Add border between cells for better readability */
+      }
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      width: 200px;
+      height: 50px;
+      background-color: #0067B1;
+      color: white;
+      text-align: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+      margin-left: 50%;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #004c8c;
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <h2>Record History</h2>
+
+    <table>
+      <tr>
+        <th>Dog ID:</th>
+        <th>Week Commencing:</th>
+        <th>Attribute</th>
+        <th>Value(Average)</th>
+        <th>All Time Average</th>
+        <th>Average Comparison</th>
+        <th>Recommendation</th>
+      </tr>
+      <tr>
+        <td class="usernameDisplay"></td>
+        <td>"23-12-2023" - "30-12-2023"</td>
+
+        <td>Weight</td>
+
+
+        <td>
+          <div id="AverageWeight"></div>
+        </td>
+
+        <td>
+          <div id="yearlyAverage"></div>
+        </td>
+        <td>
+          <div id="comparisonResult"></div>
+        </td>
+        <td>
+          <div id="WeightRecommendation"></div>
+        </td>
+
+      </tr>
+      <tr>
+        <td class="usernameDisplay"></td>
+        <td>23-12-2023" - "30-12-2023</td>
+        <td>Temperature</td>
+        <td>
+          <div id="AverageTemperature"></div>
+        </td>
+        <td>
+          <div id="AvgYearTemp"></div>
+        </td>
+        <td>
+          <div id="TempResult"></div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="usernameDisplay"></td>
+        <td>23-12-2023" - "30-12-2023</td>
+        <td>Breathing Rate</td>
+        <td>
+          <div id="AverageBreathingRate"></div>
+        </td>
+        <td>
+          <div id="YearBreathing"></div>
+        </td>
+        <td>
+          <div id="compareBreathing"></div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="usernameDisplay"></td>
+        <td>23-12-2023" - "30-12-2023</td>
+        <td>Food Intake</td>
+        <td>
+          <div id="foodIntake"></div>
+        </td>
+        <td>
+          <div id="YearFood"></div>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    </div>
+    <a href="index.html" class="btn">
+      <i class="fas fa-home"></i>
+      <span style="margin-left: 5px;">Back to Home</span>
+    </a>
+
+
+
+    <script src="./averageWeight.js"></script>
+    <script src="./averageTemperature.js"></script>
+    <script src="./averageBreathing.js"></script>
+    <script src="./averagefood.js"></script>
+    <script src="./yearlyAverage.js"></script>
+    <script src="./belowNormalAverageWeight.js"></script>
+    <script src="./yearlyAverageTemperature.js"></script>
+    <script src="./belowNormalAverageTemperature.js"></script>
+    <script src="./yearlyAverageBreathingRate.js"></script>
+    <script src="./yearlyAverageFoodIntake.js"></script>
+    <script src="./belowNormalAboveBreathing.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var savedUsername = localStorage.getItem('username');
+        var usernameDisplays = document.querySelectorAll('.usernameDisplay');
+        usernameDisplays.forEach(function (display) {
+          display.innerHTML += savedUsername;
+        });
+      });
+    </script>
+    </script>
+  </body>
+
+</html>

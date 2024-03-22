@@ -9,15 +9,36 @@ router.get('/dog/:dogId', async (req, res) => {
         const database = client.db('Animal-Data');
         const collection = database.collection('Dogs');
         const dogId = req.params.dogId;
-        const projection = { "Heart Rate (bpm)": 1, _id: 0 };
+        const projection = {
+            "_id": 0, 
+            "Behaviour Pattern": 1, 
+            "Heart Rate (bpm)": 1 ,
+            "Activity Level (steps)": 1 ,
+            "Breathing Rate (breaths/min)": 1 
+
+        };
+        
 
         const data = await collection.find(
             {
+                $or: [
+                    {
+                        "Date": "30-12-2023",
+                "Hour": { $gte: 12, $lte: 24},
+                    },
+                    {
+                        "Date": "31-12-2023",
+                "Hour": { $gte: 0, $lte: 12},
+                    }
+                ],
                 DogID: dogId,
-                "Heart Rate (bpm)": { $gte: 0, $lte: 142 },
+                "Behaviour Pattern": "Sleeping",
+                "Heart Rate (bpm)": { $gte: 0, $lte: 1000},
+                "Activity Level (steps)": { $gte: 0, $lte: 9999 },
+                "Breathing Rate (breaths/min)": { $gte: 0, $lte: 1000},
+
                 //date is in american time format
-                "Date": "31-12-2023",
-                "Hour": {"$gte": 0, "$lte": 13}
+                
             },
            { projection}
         ).toArray();
@@ -39,5 +60,6 @@ module.exports = router;
 
 
 const client = new MongoClient("mongodb+srv://c1022557:Elanco@eland-project.88nwkvg.mongodb.net/'");
+
 
 

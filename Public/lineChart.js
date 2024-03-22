@@ -20,11 +20,12 @@ let myChart = new Chart(ctx, {
     data: {
         labels: [{ }], // Initially empty
         datasets: [{
-            label: "Heart Rate (bpm)",
+            label: "Heart Rate",
             data: [], // Initially empty
             backgroundColor: "red", 
             borderColor: "#FF6384",
             fill: false,
+            
         }]
     },
     options: {
@@ -33,14 +34,33 @@ let myChart = new Chart(ctx, {
                 beginAtZero: false, // Adjust if necessary to fit your data
                 ticks: {
                     color: "white" // Set Y-axis ticks text color to white
+                },
+                title: {
+                    display: true,
+                    text: 'Heart Rate (bpm)',
+                    color: "white",
+                    align:"center"
+                },
+                grid: {
+                    color: "white",// Turn off grid lines for y axis
                 }
             },
             x: {
                 ticks: {
                     color: "white" // Set X-axis ticks text color to white
+                },
+                title: {
+                    display: true,
+                    text: 'Time Of Day',
+                    color: "white",
+                    align: "center",
+                    fontSize: "20px",
+                },
+                grid: {
+                    color: "white", // Turn off grid lines for y axis
                 }
             }
-        },
+        }, // Add a closing parenthesis here
         legend: {
             display: true, // Set to true to display the legend
             labels: {
@@ -63,7 +83,7 @@ function updateChartData(dogId) {
     fetchDogData(dogId).then(data => {
         // Generate labels for each data point, making them more descriptive
  
-        const labels = data.map((_, index) => `${index + 1}`);
+        const labels = Array.from({length: 24}, (_, i) => `${i}:00`);
         // Extract heart rates using the "Heart Rate (bpm)" property from the data
         const heartRates = data.map(item => item["Heart Rate (bpm)"]);
 
@@ -80,10 +100,9 @@ function updateChartData(dogId) {
 }
 
 
+var savedUsername = localStorage.getItem('username');
 // Example usage: Update chart data for a specific dog by its ID
-updateChartData('CANINE001');
-// Select the canvas element
-
+updateChartData(savedUsername);
 
 
 

@@ -14,10 +14,9 @@ router.get('/dog/:dogId', async (req, res) => {
         const data = await collection.find(
             {
                 DogID: dogId,
-                "Heart Rate (bpm)": { $gte: 0, $lte: 142 },
+                "Heart Rate (bpm)": { $gte: 101, $lte: 142 },
                 //date is in american time format
-                "Date": "31-12-2023",
-                "Hour": {"$gte": 0, "$lte": 13}
+                "Date": "31-12-2023", "Hour": 13
             },
            { projection}
         ).toArray();

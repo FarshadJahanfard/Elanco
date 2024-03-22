@@ -14,9 +14,9 @@ router.get('/dog/:dogId', async (req, res) => {
         const data = await collection.find(
             {
                 DogID: dogId,
-                "Weight (kg)": 1,
+                "Weight (kg)": { $gte: 0, $lte: 1000000 },
                 //date is in american time format
-                "Date": {"$in": ["01-01-2021", "01-02-2021"]},
+                "Date": "31-12-2023", "Hour": 13
             },
            { projection}
         ).toArray();

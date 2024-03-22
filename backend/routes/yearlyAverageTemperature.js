@@ -9,17 +9,15 @@ router.get('/dog/:dogId', async (req, res) => {
         const database = client.db('Animal-Data');
         const collection = database.collection('Dogs');
         const dogId = req.params.dogId;
-        const projection = { "Heart Rate (bpm)": 1, _id: 0 };
+        const projection = { "Temperature (C)": 1, _id: 0 };
 
         const data = await collection.find(
             {
                 DogID: dogId,
-                "Heart Rate (bpm)": { $gte: 0, $lte: 142 },
-                //date is in american time format
-                "Date": "31-12-2023",
-                "Hour": {"$gte": 0, "$lte": 13}
+                "Temperature (C)": { $gte: 0, $lte: 1000 },
+               
             },
-           { projection}
+            { projection }
         ).toArray();
 
         if (data.length > 0) {

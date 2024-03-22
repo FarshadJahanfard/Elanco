@@ -9,20 +9,18 @@ router.get('/dog/:dogId', async (req, res) => {
         const database = client.db('Animal-Data');
         const collection = database.collection('Dogs');
         const dogId = req.params.dogId;
-        const projection = { "Heart Rate (bpm)": 1, _id: 0 };
+        const projection = { "Food Intake (calories)": 1, _id: 0 };
 
         const data = await collection.find(
-            {
-                DogID: dogId,
-                "Heart Rate (bpm)": { $gte: 0, $lte: 142 },
-                //date is in american time format
-                "Date": "31-12-2023",
-                "Hour": {"$gte": 0, "$lte": 13}
-            },
-           { projection}
-        ).toArray();
+            {DogID: dogId,
+            "Food Intake (calories)" :{ $gte: 0 , $lte: 1000} ,
+            "Date": { "$in": ["25-12-2023","26-12-2023","27-12-2023","28-12-2023","29-12-2023","30-12-2023", "31-12-2023"] }
+        },
 
-        if (data.length > 0) {
+            {projection}
+        ).toArray(); 
+        
+        if (data.length > 0) { 
             res.json(data);
         } else {
             res.status(404).send('Dog not found for the specified date');
