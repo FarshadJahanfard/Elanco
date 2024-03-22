@@ -32,22 +32,22 @@ function initDashboard() {
   const boxData = [
     {
       class: "Activity",
-      content: `<i class="fas fa-walking"></i> Activity<br>${globalAL}`,
+      content: `<i class="fas fa-walking"></i> Activity<br>Total Steps:${globalAL}<br>Target Steps: 2500`,
       link: ".//widgets/activity-inner.html",
     },
     {
       class: "Heartbeat",
-      content: `<i class="fas fa-heartbeat"></i> Heartbeat<br>${globalHR}`,
+      content: `<i class="fas fa-heartbeat"></i> Heartbeat<br>${globalHR}bpm`,
       link: ".//widgets/heart-inner.html",
     },
     {
       class: "Calories Burnt",
-      content: `<i class="fas fa-fire"></i> Calories Burnt<br>${globalCB}`,
+      content: `<i class="fas fa-fire"></i> Calories Burnt<br>Total: ${globalCB}kcal<br>Target: 350kcal`,
       link: ".//widgets/calories-inner.html",
     },
     {
       class: "Water Intake",
-      content: `<i class="fas fa-tint"></i> Water Intake<br>${globalWater}`,
+      content: `<i class="fas fa-tint"></i> Water Intake<br>Total:${globalWater}ml<br>Target: 500ml`,
       link: ".//widgets/water-inner.html",
     },
     {
@@ -57,7 +57,7 @@ function initDashboard() {
     },
     {
       class: "Breathing Rate",
-      content: `<i class="fas fa-lungs"></i>Breathing Rate<br>${globalBR}`,
+      content: `<i class="fas fa-lungs"></i>Breathing Rate<br>${globalBR}bpm`,
       link: ".//widgets/breathing-inner.html",
     },
   ];
