@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Elanco Project | Home</title>
     <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 1020px)">
     <link rel="stylesheet" href="./css/desktop.css" media="(min-width: 1021px)">
@@ -12,12 +13,13 @@
     <script src="https://code.jscharting.com/latest/jscharting.js"></script>
     <script type="text/javascript" src="https://code.jscharting.com/latest/modules/types.js"></script>
 </head>
+
 <body>
     <header>
         <!-- DONT REMOVE logo and stuff are in the css file -->
     </header>
 
-<!-- css gird parent  -->
+    <!-- css gird parent  -->
     <div class="parent">
         <!-- side bar  -->
         <div class="div1">
@@ -29,30 +31,38 @@
             <a href="previousRecords.html"><i class="fas fa-clipboard-list"></i> Previous Records</a>
             <a class="logout" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
 
-        <div class="socials">
             <div class="socials">
-                <a href="https://www.facebook.com/elancoanimalhealth/?locale=en_GB" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com/elanco?lang=en-GB" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/elanco4animals/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/company/elanco" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <div class="socials">
+                    <a href="https://www.facebook.com/elancoanimalhealth/?locale=en_GB" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/elanco?lang=en-GB" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/elanco4animals/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/elanco" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
-          </div>
 
         <div class="div2" style="background-color: #fff;">
             <h1 style="color:#000000;">Activity Level (steps) </h1>
             <div id="chartCenterText4" style="justify-content: space-around;
                 align-items: flex-start; font-size: 17px; display: flex;"> Loading... </div>
-                <canvas id="stepsCanvas"></canvas>
-                <h1 style="border-top: 4px solid black; color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-top: 24px;">Sleep Performance</h1>
-                <div id="chartDiv" style="max-width: 400px; height: 250px;margin: 0px auto; padding-left: 10px; padding-right: 10px; "></div>
+            <canvas id="stepsCanvas"></canvas>
+            <h1
+                style="border-top: 4px solid black; color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-top: 24px;">
+                Sleep Performance</h1>
+            <div id="chartDiv"
+                style="max-width: 400px; height: 250px;margin: 0px auto; padding-left: 10px; padding-right: 10px; ">
+            </div>
         </div>
 
         <div class="div4">
             <h1 style="font-size: larger;">Weight (kg)</h1>
-                <div id="chartCenterText1" style="color: #fff; font-size: 28px; display: flex; justify-content: center; margin-top: 20%">
-                    Loading...
-                </div> 
+            <div id="chartCenterText1"
+                style="color: #fff; font-size: 28px; display: flex; justify-content: center; margin-top: 20%">
+                Loading...
+            </div>
         </div>
 
 
@@ -62,17 +72,18 @@
         </div>
         <div class="div6" style="position: relative;">
             <canvas id="temperatureCanvas" style="width: 200px; height: 100px; position: relative;"></canvas>
-            <div id="chartCenterText" style="position: absolute; top: 44%; left:50%; transform: translate(-50%, -50%); color: white; font-size: 14px;">
+            <div id="chartCenterText"
+                style="position: absolute; top: 44%; left:50%; transform: translate(-50%, -50%); color: white; font-size: 14px;">
                 Loading...
-        </div>
+            </div>
 
 
         </div>
         <div class="div7">
-             <canvas id="heartRateCanvas" style="margin-top: 15%; padding-left: 10px; padding-right: 10px;"></canvas>
+            <canvas id="heartRateCanvas" style="margin-top: 15%; padding-left: 10px; padding-right: 10px;"></canvas>
         </div>
-       
-        
+
+
         <!-- mobile drop down menu  -->
         <div class="container-mobile">
             <div class="Sidebar">
@@ -88,33 +99,34 @@
                     <img src="./images/Logo.png" alt="Your Logo" class="logo" id="LOGO">
                 </nav>
             </div>
-    <h1 class="index-dash">Dashboard</h1>
-        </div> 
+            <h1 class="index-dash">Dashboard</h1>
+        </div>
 
-    <!-- Bottom menu -->
-    <div class="bottom-menu" id="bottomMenu">
-        <a href="#home"><i class="fas fa-home"></i> Home</a>
-        <a href="https://www.elanco.com/en-us/products-and-services"><i class="fas fa-comment"></i> Elanco-GPT</a>
-        <a href="./documentation.html"><i class="fas fa-file-alt"></i> Documentation</a>
-    </div>
+        <!-- Bottom menu -->
+        <div class="bottom-menu" id="bottomMenu">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="https://www.elanco.com/en-us/products-and-services"><i class="fas fa-comment"></i> Elanco-GPT</a>
+            <a href="./documentation.html"><i class="fas fa-file-alt"></i> Documentation</a>
+        </div>
 
-    <div id="dashboard" class="dashboard-container"></div>
+        <div id="dashboard" class="dashboard-container"></div>
 
 
-    <script src="./public JS/main.js"></script>
-    <script src="./lineChart.js"></script>
-     <script src="./barChart.js"></script>
-    <script src="./doughnut.js"></script>
-    <script src="./SleepChart.js"></script>
-    <script src="./onScreenDisplays.js"></script>
-    <script src = "../backend/routes/activityLevelroutes.js"></script>
-    <script src="./waterIntakeCalc.js"></script>
-    <script src="./heartRate.js"></script>
-    <script src="./breathingRateValue.js"></script>
-    <script src="./caloriesBurnt.js"></script>
-    <script src="./dailyActivty.js"></script>
+        <script src="./public JS/main.js"></script>
+        <script src="./lineChart.js"></script>
+        <script src="./barChart.js"></script>
+        <script src="./doughnut.js"></script>
+        <script src="./SleepChart.js"></script>
+        <script src="./onScreenDisplays.js"></script>
+        <script src="../backend/routes/activityLevelroutes.js"></script>
+        <script src="./waterIntakeCalc.js"></script>
+        <script src="./heartRate.js"></script>
+        <script src="./breathingRateValue.js"></script>
+        <script src="./caloriesBurnt.js"></script>
+        <script src="./dailyActivty.js"></script>
 
 
 
 </body>
+
 </html>

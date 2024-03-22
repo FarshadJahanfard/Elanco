@@ -193,9 +193,8 @@ nav a:hover {
 .index-dash {
   color: #fff;
   text-align: center;
-
   text-transform: uppercase;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Arial, sans-serif;
   background-color: #ffffff;
   background-image: linear-gradient(315deg, #ffffff 0%, #91a6ff 74%);
   -webkit-background-clip: text;
