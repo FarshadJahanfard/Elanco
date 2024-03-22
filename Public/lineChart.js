@@ -83,7 +83,7 @@ function updateChartData(dogId) {
     fetchDogData(dogId).then(data => {
         // Generate labels for each data point, making them more descriptive
  
-        const labels = data.map((_, index) => `${index + 1}`);
+        const labels = Array.from({length: 24}, (_, i) => `${i}:00`);
         // Extract heart rates using the "Heart Rate (bpm)" property from the data
         const heartRates = data.map(item => item["Heart Rate (bpm)"]);
 

@@ -1,7 +1,7 @@
 
 // Function to fetch dog heart rate data from the server
 function fetchDogData(dogId) {
-    const url = `http://localhost:3001/api/activitylevel/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/dailyActivityLevel/dog/${dogId}`; // Enclose URL in backticks
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -16,7 +16,7 @@ const ctx2 = stepsCanvas.getContext('2d');
 
 // Create a new Chart instance
 let myChart1 = new Chart(ctx2, {
-    type: "line",
+    type: "bar",
     data: {
             datasets: [{
             label: "Steps",
@@ -77,7 +77,7 @@ function updateChartData(dogId) {
     fetchDogData(dogId).then(data => {
         // Generate labels for each data point, making them more descriptive
  
-        const labels = data.map((_, index) => `${index + 1}`);
+        const labels = Array.from({length: 24}, (_, i) => `${i}:00`);
         // Extract heart rates using the "Heart Rate (bpm)" property from the data
         const steps = data.map(item => item["Activity Level (steps)"]);
 
