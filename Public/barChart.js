@@ -1,7 +1,7 @@
 
-// Function to fetch dog heart rate data from the server
+
 function fetchDogData(dogId) {
-    const url = `http://localhost:3001/api/dailyActivityLevel/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/dailyActivityLevel/dog/${dogId}`; 
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -10,17 +10,17 @@ function fetchDogData(dogId) {
     });
 }
 
-// Select the canvas element and get its context for drawing
+
 const stepsCanvas = document.getElementById('stepsCanvas');
 const ctx2 = stepsCanvas.getContext('2d');
 
-// Create a new Chart instance
+
 let myChart1 = new Chart(ctx2, {
     type: "bar",
     data: {
             datasets: [{
             label: "Steps",
-            backgroundColor: "#0067b1", // Set bar color to green
+            backgroundColor: "#0067b1", 
             borderColor: "white",
             borderWidth: 1,
             hoverOffset: 4,
@@ -29,9 +29,9 @@ let myChart1 = new Chart(ctx2, {
     options: {
         scales: {
             y: {
-                beginAtZero: false, // Adjust if necessary to fit your data
+                beginAtZero: false, 
                 ticks: {
-                    color: "black" // Set Y-axis ticks text color to white
+                    color: "black" 
                 },
                 title: {
                     display: true,
@@ -52,21 +52,21 @@ let myChart1 = new Chart(ctx2, {
                     align: "center"
                 },
                 ticks: {
-                    color: "black" // Set X-axis ticks text color to white
+                    color: "black" 
                 }
                 
             }
         },
         legend: {
-            display: true, // Set to true to display the legend
+            display: true, 
             labels: {
-                color: "balck" // Set legend text color to white
+                color: "balck" 
             }
         },
         plugins: {
             legend: {
                 labels: {
-                    color: "black" // Ensure legend text color is white for newer versions of Chart.js
+                    color: "black" 
                 }
             }
         }
@@ -75,14 +75,14 @@ let myChart1 = new Chart(ctx2, {
 
 function updateChartData(dogId) {
     fetchDogData(dogId).then(data => {
-        // Generate labels for each data point, making them more descriptive
+        
  
         const labels = Array.from({length: 24}, (_, i) => `${i}:00`);
-        // Extract heart rates using the "Heart Rate (bpm)" property from the data
+       
         const steps = data.map(item => item["Activity Level (steps)"]);
 
 
-        // Update the chart with the new data
+     
         myChart1.data.labels = labels;
         myChart1.data.datasets[0].data = steps;
 
@@ -90,10 +90,10 @@ function updateChartData(dogId) {
         const totalActivityLevel = activityLevels.reduce((total, current) => total + current, 0); 
         console.log('Total Activity Level:', totalActivityLevel);
 
-        // Update the text in the middle of the chart
+        
         document.getElementById('chartCenterText4').textContent = ` Total Steps:  ${totalActivityLevel}`;
 
-        // Refresh the chart to display the new data
+        
         myChart1.update();
     }).catch(error => {
         console.error('Error fetching or updating chart data:', error);
@@ -102,8 +102,7 @@ function updateChartData(dogId) {
 
 var savedUsername = localStorage.getItem('username');
     
-// Use the username as needed
-// Example usage: Update chart data for a specific dog by its ID
+
 updateChartData(savedUsername);
 
 

@@ -8,11 +8,11 @@ function fetchDogWeight(dogId) {
             return response.json();
         })
         .then(data => {
-            // Since your data is an array of objects, access the first item and then its 'Weight (kg)' property
-            const weight = data[0]["Weight (kg)"]; // Adjust based on actual data structure
-           ; // Convert to float and round to 1 decimal place
+            
+            const weight = data[0]["Weight (kg)"]; 
+           ; 
     
-            // Update the text in the middle of the chart
+           
             document.getElementById('AverageWeight').textContent = `${weight} kg`;
 
             console.log(weight)
@@ -26,6 +26,6 @@ function fetchDogWeight(dogId) {
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Call the function with the specific dog ID
-    fetchDogWeight(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
+    
+    fetchDogWeight(savedUsername);
 });

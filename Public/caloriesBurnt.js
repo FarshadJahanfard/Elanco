@@ -29,6 +29,6 @@ async function fetchCaloriesBurnt(dogId) {
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Call the function with the specific dog ID
-  fetchCaloriesBurnt(savedUsername); // Replace 'CANINE001' with the actual dog ID you're interested in
+  
+  fetchCaloriesBurnt(savedUsername); 
 });

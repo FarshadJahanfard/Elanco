@@ -1,7 +1,7 @@
 
-// Function to fetch dog heart rate data from the server
+
 function fetchDogData(dogId) {
-    const url = `http://localhost:3001/api/heartRate/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/heartRate/dog/${dogId}`; 
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -10,18 +10,17 @@ function fetchDogData(dogId) {
     });
 }
 
-// Select the canvas element and get its context for drawing
+
 const heartRateCanvas = document.getElementById('heartRateCanvas');
 const ctx = heartRateCanvas.getContext('2d');
 
-// Create a new Chart instance
 let myChart = new Chart(ctx, {
     type: "line",
     data: {
-        labels: [{ }], // Initially empty
+        labels: [{ }], 
         datasets: [{
             label: "Heart Rate",
-            data: [], // Initially empty
+            data: [], 
             backgroundColor: "red", 
             borderColor: "#FF6384",
             fill: false,
@@ -31,9 +30,9 @@ let myChart = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                beginAtZero: false, // Adjust if necessary to fit your data
+                beginAtZero: false,
                 ticks: {
-                    color: "white" // Set Y-axis ticks text color to white
+                    color: "white" 
                 },
                 title: {
                     display: true,
@@ -42,12 +41,12 @@ let myChart = new Chart(ctx, {
                     align:"center"
                 },
                 grid: {
-                    color: "white",// Turn off grid lines for y axis
+                    color: "white",
                 }
             },
             x: {
                 ticks: {
-                    color: "white" // Set X-axis ticks text color to white
+                    color: "white" 
                 },
                 title: {
                     display: true,
@@ -57,42 +56,41 @@ let myChart = new Chart(ctx, {
                     fontSize: "20px",
                 },
                 grid: {
-                    color: "white", // Turn off grid lines for y axis
+                    color: "white", 
                 }
             }
-        }, // Add a closing parenthesis here
+        }, 
         legend: {
-            display: true, // Set to true to display the legend
+            display: true, 
             labels: {
-                color: "white" // Set legend text color to white
+                color: "white" 
             }
         },
         plugins: {
             legend: {
                 labels: {
-                    color: "white" // Ensure legend text color is white for newer versions of Chart.js
+                    color: "white" 
                 }
             }
         }
     }
 });
 
-// Function to update the chart data
-// Function to update the chart data
+
 function updateChartData(dogId) {
     fetchDogData(dogId).then(data => {
-        // Generate labels for each data point, making them more descriptive
+      
  
         const labels = Array.from({length: 24}, (_, i) => `${i}:00`);
-        // Extract heart rates using the "Heart Rate (bpm)" property from the data
+        
         const heartRates = data.map(item => item["Heart Rate (bpm)"]);
 
 
-        // Update the chart with the new data
+        
         myChart.data.labels = labels;
         myChart.data.datasets[0].data = heartRates;
 
-        // Refresh the chart to display the new data
+        
         myChart.update();
     }).catch(error => {
         console.error('Error fetching or updating chart data:', error);
@@ -101,7 +99,7 @@ function updateChartData(dogId) {
 
 
 var savedUsername = localStorage.getItem('username');
-// Example usage: Update chart data for a specific dog by its ID
+
 updateChartData(savedUsername);
 
 

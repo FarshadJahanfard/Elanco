@@ -8,11 +8,11 @@ function fetchDogData1(dogId) {
             return response.json();
         })
         .then(data => {
-            // Since your data is an array of objects, access the first item and then its 'Weight (kg)' property
-            const weight = data[0]["Weight (kg)"]; // Adjust based on actual data structure
-            const roundedWeight = parseFloat(weight).toFixed(1); // Convert to float and round to 1 decimal place
+            
+            const weight = data[0]["Weight (kg)"]; 
+            const roundedWeight = parseFloat(weight).toFixed(1); 
     
-            // Update the text in the middle of the chart
+            
             document.getElementById('chartCenterText1').textContent = `${roundedWeight} kg`;
         })
         .catch(error => {
@@ -24,7 +24,7 @@ function fetchDogData1(dogId) {
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Call the function with the specific dog ID
+   
     fetchDogData(savedUsername); 
-    fetchDogData1(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
+    fetchDogData1(savedUsername);
 });

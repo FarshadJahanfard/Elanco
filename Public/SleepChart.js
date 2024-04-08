@@ -6,7 +6,7 @@ async function fetchDogData2(dogId) {
       throw new Error('Network response was not ok');
     }
     const data = await response.json();
-    const idealHeartRateMidpoint = 90; // base point of the acceptable
+    const idealHeartRateMidpoint = 90; 
     const idealBreathingRateMidpoint = 20;  
 
     function calculateDeviation(value, midpoint) {
@@ -39,7 +39,7 @@ var chart = JSC.chart(
   animation_duration: animationDuration,
   xAxis: {
     scale: {
-      // Helps position the marker on top of the y Axis.
+     
       range: [0, 1]
     }
   },
@@ -54,13 +54,13 @@ var chart = JSC.chart(
   },
   yAxis: {
     defaultTick: {
-      // Pads around the gauge
+     
       padding: 13,
       label_visible: false
     },
     line: {
       width: 15,
-      // Gaps occur at tick intervals defined below.
+     
       breaks_gap: 0.03,
       color: 'smartPalette'
     },
@@ -97,7 +97,7 @@ var chart = JSC.chart(
           type: 'circle',
           size: 30
         },
-      }, // Add a comma here
+      }, 
       points: [{ y: 0 }],
     },
   ],

@@ -2,7 +2,7 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 const router = express.Router();
 
-// Route to get data for a specific DogID.
+
 router.get('/dog/:dogId', async (req, res) => {
     try {
         await client.connect();
@@ -37,7 +37,7 @@ router.get('/dog/:dogId', async (req, res) => {
                 "Activity Level (steps)": { $gte: 0, $lte: 9999 },
                 "Breathing Rate (breaths/min)": { $gte: 0, $lte: 1000},
 
-                //date is in american time format
+                
                 
             },
            { projection}
