@@ -1,5 +1,5 @@
 function fetchDogYearlyFood(dogId) {
-    const url = `http://localhost:3001/api/yearlyFoodIntake/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/yearlyFoodIntake/dog/${dogId}`; 
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -37,6 +37,6 @@ console.log(data.length)
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-// Call the function with the specific dog ID
-fetchDogYearlyFood(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
+
+fetchDogYearlyFood(savedUsername);
 });

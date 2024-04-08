@@ -1,5 +1,5 @@
 function fetchDogYearlyBreathing(dogId) {
-    const url = `http://localhost:3001/api/yearlyBreathingRate/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/yearlyBreathingRate/dog/${dogId}`; 
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -15,7 +15,7 @@ function fetchDogYearlyBreathing(dogId) {
                 console.log(data[i].breathingRate) ;
             }
             let averageBreathing = totalyearlyBreathingRate / yearlyBreathingRecordLenght;
-// Assuming the data is in the format you provided
+
 totalyearlyBreathingRate = data.reduce((total, item) => total + item["Breathing Rate (breaths/min)"], 0);
 console.log('Total Yearly Breathing Rate:', totalyearlyBreathingRate);
 var AverageYearlyBreathing = totalyearlyBreathingRate/yearlyBreathingRecordLenght;
@@ -37,6 +37,6 @@ console.log(data.length)
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-// Call the function with the specific dog ID
-fetchDogYearlyBreathing(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
+
+fetchDogYearlyBreathing(savedUsername);
 });
