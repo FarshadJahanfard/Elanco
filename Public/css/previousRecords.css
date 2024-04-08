@@ -26,35 +26,35 @@ header {
 
 .dropdown {
     display: inline-block;
-    margin-right: 50px; /* Adjust spacing between dropdowns as needed */
+    margin-right: 50px; 
     padding: 50px;
 }
 
-/* CSS for dropdown button */
+
 .dropdown select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    width: 200px; /* Adjust width as needed */
-    background-color: #fff; /* Adjust background color as needed */
-    color: #333; /* Adjust text color as needed */
+    width: 200px; 
+    background-color: #fff; 
+    color: #333; 
 }
 
-/* CSS for dropdown button when hovered */
+
 .dropdown select:hover {
-    border-color: #999; /* Adjust border color when hovered */
+    border-color: #999; 
 }
 
-/* CSS for dropdown options */
+
 .dropdown select option {
     padding: 10px;
-    background-color: #f9f9f9; /* Adjust background color as needed */
-    color: #333; /* Adjust text color as needed */
+    background-color: #f9f9f9; 
+    color: #333; 
 }
 
-/* CSS for dropdown options when hovered */
+
 .dropdown select option:hover {
-    background-color: #e0e0e0; /* Adjust background color when hovered */
+    background-color: #e0e0e0; 
 }
 

@@ -19,7 +19,7 @@ body {
   z-index: -1;
   animation: slide 20s infinite linear;
   left: 240px;
-  padding-top: 50px; /*in a specific size the dogs nose gets blocked by logo*/
+  padding-top: 50px; 
 }
 
 .container {

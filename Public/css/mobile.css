@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-/* buttom menu */
+
 .bottom-menu {
   position: fixed;
   bottom: 0;
@@ -140,7 +140,7 @@ nav a:hover {
   display: none;
 }
 
-/* Box Styles */
+
 .box {
   background: linear-gradient(to bottom, #ffffff, #e3e3e3);
   border-radius: 10px;
@@ -148,33 +148,33 @@ nav a:hover {
   padding: 10px;
   text-align: center;
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
-  min-width: 100px; /* Minimum width for boxes */
-  min-height: 100px; /* Minimum height for boxes */
+  align-items: center; 
+  justify-content: center; 
+  min-width: 100px; 
+  min-height: 100px; 
   transition: transform 0.3s ease;
 }
 
 .box i {
-  margin-right: 5px; /* Add some space between the icon and the text */
-  font-size: 20px; /* Adjust the size of the icons */
+  margin-right: 5px; 
+  font-size: 20px;
 }
 .box:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
-/* Styles for the dashboard container */
+
 .dashboard-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-template-rows: repeat(3, 1fr); /* Three rows */
-  gap: 30px; /* Spacing between boxes */
-  justify-content: center; /* Center grid horizontally */
-  align-content: center; /* Center grid vertically */
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(3, 1fr); 
+  gap: 30px; 
+  justify-content: center; 
+  align-content: center; 
   padding: 20px;
-  margin: 0 auto; /* Center the container itself */
-  width: auto; /* Maximum width of the container, adjust as needed */
-  height: 75vh; /* Optional: if you want the container to fill the screen height */
+  margin: 0 auto; 
+  width: auto; 
+  height: 75vh; 
 }
 
 /* Media query to show/hide burger menu based on screen size */
