@@ -5,7 +5,7 @@ const router = express.Router();
 
 const client = new MongoClient("mongodb+srv://c1022557:Elanco@eland-project.88nwkvg.mongodb.net/'");
 
-// Route to get data for a specific DogID.
+
 router.get('/dog/:dogId', async (req, res) => {
     try {
         await client.connect();

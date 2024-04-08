@@ -2,7 +2,6 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 const router = express.Router();
 
-// Route to get data for a specific DogID.
 router.get('/dog/:dogId', async (req, res) => {
     try {
         await client.connect();
@@ -15,7 +14,7 @@ router.get('/dog/:dogId', async (req, res) => {
             {
                 DogID: dogId,
                 "Weight (kg)": { $gte: 0, $lte: 1000000 },
-                //date is in american time format
+           
                 "Date": { "$in": ["25-12-2023","26-12-2023","27-12-2023","28-12-2023","29-12-2023","30-12-2023", "31-12-2023"] }
                
             },
