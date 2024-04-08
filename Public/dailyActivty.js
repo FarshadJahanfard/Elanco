@@ -29,7 +29,7 @@ async function fetchActivityLevel(dogId) {
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Call the function with the specific dog ID
-  fetchActivityLevel(savedUsername); // Replace 'CANINE001' with the actual dog ID you're interested in
+  
+  fetchActivityLevel(savedUsername); 
 });
 

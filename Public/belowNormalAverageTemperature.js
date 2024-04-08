@@ -1,5 +1,5 @@
 function fetchDogAverageTemp(dogId) {
-    const url = `http://localhost:3001/api/averageTemperature/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/averageTemperature/dog/${dogId}`; 
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -15,7 +15,7 @@ function fetchDogAverageTemp(dogId) {
                 console.log(data[i].temperature) ;
             }
             let averageTemperature = totalTemperature / TemperatureRecordLenght;
-// Assuming the data is in the format you provided
+
 totalTemperature = data.reduce((total, item) => total + item["Temperature (C)"], 0);
 console.log('Total Temperature:', totalTemperature);
 AverageTemperature = totalTemperature/TemperatureRecordLenght;
@@ -34,12 +34,12 @@ document.getElementById('AverageTemperature').textContent = `${AverageTemperatur
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-// Call the function with the specific dog ID
-fetchDogAverageTemp(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
+
+fetchDogAverageTemp(savedUsername);
 });
 
 function fetchDogYearlyTemperature(dogId) {
-    const url = `http://localhost:3001/api/yearlyAverageTemperature/dog/${dogId}`; // Enclose URL in backticks
+    const url = `http://localhost:3001/api/yearlyAverageTemperature/dog/${dogId}`; 
     return fetch(url).then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -55,7 +55,7 @@ function fetchDogYearlyTemperature(dogId) {
                 console.log(data[i].temperature) ;
             }
             let averageTemperature = totalyearlyTemperatureRate / yearlyTemperatureRecordLenght;
-// Assuming the data is in the format you provided
+
 totalyearlyTemperatureRate = data.reduce((total, item) => total + item["Temperature (C)"], 0);
 console.log('Total Yearly Temperature:', totalyearlyTemperatureRate);
 var AverageYearlyTemperature = totalyearlyTemperatureRate/yearlyTemperatureRecordLenght;
@@ -77,11 +77,10 @@ console.log(data.length)
 var savedUsername = localStorage.getItem('username');
 
 document.addEventListener('DOMContentLoaded', function() {
-// Call the function with the specific dog ID
-fetchDogYearlyTemperature(savedUsername);// Replace 'CANINE001' with the actual dog ID you're interested in
+
+fetchDogYearlyTemperature(savedUsername);
 });
-// Ensure that the compareTemperature function is called after the fetchDogAverageTemp and fetchDogYearlyTemperature functions have completed.
-// This can be done by using Promise.all to wait for both fetch requests to complete before calling compareTemperature.
+
 
 document.addEventListener('DOMContentLoaded', function() {
     Promise.all([fetchDogAverageTemp(savedUsername), fetchDogYearlyTemperature(savedUsername)])
